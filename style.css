@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;}
+
+.wrapper {
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    background-color: #f7f7f7;}
+
+
+header {
+    height:20vh;
+    background-color: blanchedalmond;
+    border:1px solid black;
+}
+
+main {
+    height:65vh;
+    border:1px solid black;
+}
+
+/* För att ta bort styling på "add_amount"-fältet */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield; }
+
+
+
+
+#add_form {
+    
+    display:flex;
+    flex-direction: column;
+    align-items: center; 
+    border:1px solid black;
+    width:70%;
+    height:40%;
+    
+}
+
+
+
+footer {
+    border:1px solid black;
+    height:15vh;
+    display:flex;
+    justify-content: space-between;
+}
+
+.footer_left {
+    padding:1rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.footer_right {
+    padding:1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}

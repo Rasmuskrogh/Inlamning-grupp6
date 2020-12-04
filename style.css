@@ -44,9 +44,41 @@ input[type=number] {
     align-items: center; 
     border:1px solid black;
     width:70%;
-    height:40%;
+    height:15;
     
 }
+
+
+/* Producter som pushas  */
+
+/* product section */
+#products {                      
+    height:50vh;
+}
+
+/* All css måste fixas
+
+flex containers 
+
+.product-card 
+
+flex items 
+
+.product_img
+
+.product_title
+
+.product_description
+
+.product_price
+
+#addCartBtn
+
+#edit
+
+#delete */
+
+
 
 
 

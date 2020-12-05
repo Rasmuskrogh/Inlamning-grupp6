@@ -52,19 +52,32 @@ input[type=number] {
 /* Producter som pushas  */
 
 /* product section */
-#products {                      
+#products {   
     height:50vh;
 }
 
-/* All css måste fixas
+/*  All css måste fixas
 
-flex containers 
+flex container  */
 
-.product-card 
+.productlist {
+    display: flex;
+}
 
-flex items 
+/* flex items */
 
-.product_img
+.product-card {
+    display:flex;
+    flex-direction: column;
+    width:15%;
+    text-align: center;
+    border:1px solid black;
+
+}
+
+/*
+
+.product_img  
 
 .product_title
 
@@ -72,11 +85,17 @@ flex items
 
 .product_price
 
-#addCartBtn
+#addCartBtn 
 
-#edit
+#edit {
+    
 
-#delete */
+}
+
+#delete {
+    
+}
+*/
 
 
 

@@ -53,12 +53,14 @@ function showproduct(div, title, description, price, id){
 
   const product = `<div id = "${id}" class="product-card">
                 <img class="product_img" src="/images/pic1.jpg" alt="painting">
-                <div class="product_title">${title}</div>
-                <div class="product_description">${description}</div>
-                <div class="product_price">${price} :-</div>
+                <h2 class="product_title">${title}</h2>
+                <p class="product_description">${description}</p>
+                <p class="product_price">${price} kr</p>
                 <button id="addCartBtn">Lägg till i varukorg</button>
+                <div class="editDeleteBtns">
                 <i id="edit" class="far fa-edit"></i>
                 <i id="delete" class="fas fa-trash-alt"></i>
+                </div>
   
   
   

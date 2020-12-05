@@ -5,16 +5,24 @@ const addPrice = document.querySelector("#add_price");
 const productDiv = document.querySelector("#products .productlist");
 
 // Array som allt sparas i
+//PRODUCT LIST stringifyed för att local storage sa fungera
 
-let PRODUCT_LIST = [];
+let PRODUCT_LIST;
+let SHOPPING_CART = [];
 let balance = 0;
 
 //För delete och edit knappar 
 
 const DELETE = "delete", EDIT = "edit";
 
+// Kollar om det finns sparad data i localstorage
+
+PRODUCT_LIST = JSON.parse(localStorage.getItem("PRODUCT_LIST")) || [];
+updateUI();
+
 //eventlistener för knappar
 
+productDiv.addEventListener("click", deleteOrEdit);
 uploadBtn.addEventListener("click" , newProduct);
 
 // Function för att pusha allt till array när uploadknappen är klickad
@@ -35,19 +43,63 @@ if(!addTitle.value || !addInfo.value || !addPrice.value) return;
 
 }
 
+//delete or edit function, kollar efter vilket id som stämmer och väljer parentnode som har knappen
+
+function deleteOrEdit(event){
+  const targetBtn = event.target;
+
+  const product = targetBtn.parentNode;
+
+  if ( targetBtn.id == DELETE ){
+    deleteProduct(product);
+
+  }else if(targetBtn.id == EDIT ){
+    editProduct(product);
+  }
+
+}
+
+
+// delete och edit functions
+
+
+//delete function för att tabort rätt product i arrayen, väljer efter id
+function deleteProduct(product){
+  PRODUCT_LIST.splice( product.id, 1);
+
+  updateUI();
+}
+
+//edit function som gör att man kan ändra alla inputs och tar bort produkten man vill ändra
+function editProduct(product){
+  let PRODUCT = PRODUCT_LIST[product.id];
+
+  addTitle.value = PRODUCT.title;
+  addInfo.value = PRODUCT.description;
+  addPrice.value = PRODUCT.price;
+
+  deleteProduct(product);
+}
+
 function updateUI(){
 
   balance = calculateTotal;
 
+  //Rensar input fälten i productDiv
   clearElement( [productDiv] ) ;
 
-  //index för att få id på varje produkt
+  //kör showproduct function och visar den i productDiv, index för att få id på varje produkt
   PRODUCT_LIST.forEach( (product, index) => {
     showproduct(productDiv, product.title, product.description, product.price, index)
 
   })
 
+  //sparar product på local storage
+  localStorage.setItem("PRODUCT_LIST", JSON.stringify(PRODUCT_LIST));
+
 }
+
+// Showproduct function
 
 function showproduct(div, title, description, price, id){
 
@@ -57,15 +109,16 @@ function showproduct(div, title, description, price, id){
                 <p class="product_description">${description}</p>
                 <p class="product_price">${price} kr</p>
                 <button id="addCartBtn">Lägg till i varukorg</button>
-                <div class="editDeleteBtns">
-                <i id="edit" class="far fa-edit"></i>
-                <i id="delete" class="fas fa-trash-alt"></i>
-                </div>
+                
+                <button id="edit">edit</button>
+                <button id="delete">delete</button>
+                
   
   
   
                  </div>`;
 
+  // afterbegin för att få senast tillagda product först               
   const position = "afterbegin";
 
   div.insertAdjacentHTML(position, product);

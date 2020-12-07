@@ -5,7 +5,7 @@ function myFunction() {
   const deletebtn = document.getElementsByClassName("delete")
 for (var i = 0; i <deletebtn.length; i++) {
     let button = deletebtn[i]
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function(event) {
         var btnClicked = event.target
         btnClicked.parentElement.parentElement.remove()
         updateCartTotal()

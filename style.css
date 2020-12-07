@@ -1,26 +1,23 @@
+@charset "UTF-8";
 * {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    font-size: 16px;
-    box-sizing: border-box;}
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 .wrapper {
-    width: 80%;
-    max-width: 900px;
-    margin: auto;
-    background-color: #f7f7f7;}
-
-
-header {
-    height:20vh;
-    background-color: blanchedalmond;
-    border:1px solid black;
+  width: 80%;
+  max-width: 900px;
+  margin: auto;
+  background-color: #f7f7f7;
 }
 
 main {
-    height:65vh;
-    border:1px solid black;
+  height: 65vh;
+  border: 1px solid black;
 }
 
 /* För att ta bort styling på "add_amount"-fältet */
@@ -28,54 +25,58 @@ main {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0; }
+  margin: 0;
+}
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield; }
-
-
-
-
-#add_form {
-    
-    display:flex;
-    flex-direction: column;
-    align-items: center; 
-    border:1px solid black;
-    width:70%;
-    height:15;
-    
+  -moz-appearance: textfield;
 }
 
+#add_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid black;
+  width: 70%;
+  height: 15;
+}
 
 /* Producter som pushas  */
-
 /* product section */
-#products {   
-    height:50vh;
+#products {
+  height: 50vh;
 }
 
 /*  All css måste fixas
 
 flex container  */
-
 .productlist {
-    display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /* flex items */
-
 .product-card {
-    display:flex;
-    flex-direction: column;
-    width:15%;
-    text-align: center;
-    border:1px solid black;
-
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 15%;
+  text-align: center;
+  border: 1px solid black;
 }
-
-
 
 /* .product_img  
 
@@ -97,43 +98,113 @@ flex container  */
     
     
 }
-*/ 
-
-
-
-
-
+*/
 footer {
-    border:1px solid black;
-    height:15vh;
-    display:flex;
-    justify-content: space-between;
+  border: 1px solid black;
+  height: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .footer_left {
-    padding:1rem;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .footer_right {
-    padding:1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 a {
-    color: #0060B6;
-    text-decoration: none;
+  color: #0060B6;
+  text-decoration: none;
 }
 
-a:hover 
-{
-     color:#00A0C6; 
-     text-decoration:none; 
-     cursor:pointer;  
+a:hover {
+  color: #00A0C6;
+  text-decoration: none;
+  cursor: pointer;
 }
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */

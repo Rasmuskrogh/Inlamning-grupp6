@@ -1,0 +1,23 @@
+{
+  "name": "Inlamning-grupp6-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node-sass sass/main.scss style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rasmuskrogh/Inlamning-grupp6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rasmuskrogh/Inlamning-grupp6/issues"
+  },
+  "homepage": "https://github.com/Rasmuskrogh/Inlamning-grupp6#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

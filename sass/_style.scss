@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;}
+
+.wrapper {
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    background-color: #f7f7f7;}
+
+
+
+
+main {
+    height:65vh;
+    border:1px solid black;
+}
+
+/* För att ta bort styling på "add_amount"-fältet */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield; }
+
+
+
+
+#add_form {
+    
+    display:flex;
+    flex-direction: column;
+    align-items: center; 
+    border:1px solid black;
+    width:70%;
+    height:15;
+    
+}
+
+
+/* Producter som pushas  */
+
+/* product section */
+#products {   
+    height:50vh;
+}
+
+/*  All css måste fixas
+
+flex container  */
+
+.productlist {
+    display: flex;
+}
+
+/* flex items */
+
+.product-card {
+    display:flex;
+    flex-direction: column;
+    width:15%;
+    text-align: center;
+    border:1px solid black;
+
+}
+
+
+
+/* .product_img  
+
+.product_title
+
+.product_description
+
+.product_price
+
+#addCartBtn 
+
+#edit {
+   
+    
+
+}
+
+#delete {
+    
+    
+}
+*/ 
+
+
+
+
+
+footer {
+    border:1px solid black;
+    height:15vh;
+    display:flex;
+    justify-content: space-between;
+}
+
+.footer_left {
+    padding:1rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.footer_right {
+    padding:1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}

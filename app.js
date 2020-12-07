@@ -86,6 +86,7 @@ function updateUI(){
   balance = calculateTotal;
 
   //Rensar input fälten i productDiv
+  console.log( [productDiv] );
   clearElement( [productDiv] ) ;
 
   //kör showproduct function och visar den i productDiv, index för att få id på varje produkt
@@ -110,8 +111,8 @@ function showproduct(div, title, description, price, id){
                 <p class="product_price">${price} kr</p>
                 <button id="addCartBtn">Lägg till i varukorg</button>
                 
-                <button id="edit">edit</button>
-                <button id="delete">delete</button>
+                <button id="edit">Ändra</button>
+                <button id="delete">Ta bort</button>
                 
   
   

@@ -104,14 +104,14 @@ function updateUI(){
 function showproduct(div, title, description, price, id){
 
   const product = `<div id = "${id}" class="product-card">
-                <img class="product_img" src="/images/pic1.jpg" alt="painting">
-                <h2 class="product_title">${title}</h2>
-                <p class="product_description">${description}</p>
-                <p class="product_price">${price} kr</p>
-                <button id="addCartBtn">Lägg till i varukorg</button>
+                      <img class="product_img" src="/images/pic1.jpg" alt="painting">
+                      <h2 class="product_title">${title}</h2>
+                      <p class="product_description">${description}</p>
+                      <p class="product_price">${price} kr</p>
+                      <button id="addCartBtn">Lägg till i varukorg</button>
                 
-                <button id="edit">edit</button>
-                <button id="delete">delete</button>
+                      <button id="edit">edit</button>
+                      <button id="delete">delete</button>
                 
   
   

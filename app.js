@@ -24,7 +24,7 @@ updateUI();
 
 //eventlistener för knappar
 
-productDiv.addEventListener("click", deleteOrEdit);
+productDiv.addEventListener("click", deleteEditCart);
 uploadBtn.addEventListener("click" , newProduct);
 
 // Function för att pusha allt till array när uploadknappen är klickad
@@ -47,7 +47,7 @@ if(!addTitle.value || !addInfo.value || !addPrice.value) return;
 
 //delete or edit function, kollar efter vilket id som stämmer och väljer parentnode som har knappen
 
-function deleteOrEdit(event){
+function deleteEditCart(event){
   const targetBtn = event.target;
 
   const product = targetBtn.parentNode;
@@ -62,6 +62,8 @@ function deleteOrEdit(event){
   }
 
 }
+
+
 
 
 // delete och edit och addToCart functions
@@ -98,13 +100,27 @@ function addToCart(product){
   
   
   SHOPPING_CART.push(cartItem);
-  updateUI();
+  showCart();
   console.log(SHOPPING_CART);
 }
 
+//Kör show cartItem för att visa produkter i varukorg
+
+function showCart (){
+    
+    SHOPPING_CART.forEach( (cartItem, index) => {
+      showCartItem(cartItems, cartItem.title, cartItem.price, index)
+  
+  
+    })
+   
+}
+
+
+
 function updateUI(){
 
-  balance = calculateTotal;
+  
 
   //Rensar input fälten i productDiv
   clearElement( [productDiv] ) ;
@@ -114,12 +130,7 @@ function updateUI(){
     showproduct(productDiv, product.title, product.description, product.price, index)
 
   })
-  //Kör show cartItem för att visa produkter i varukorg, körs även när man klickar delete måste ha nått if statement
-  SHOPPING_CART.forEach( (cartItem, index) => {
-    showCartItem(cartItems, cartItem.title, cartItem.price, index)
 
-
-  })
 
   //sparar product på local storage
   localStorage.setItem("PRODUCT_LIST", JSON.stringify(PRODUCT_LIST));
@@ -136,7 +147,8 @@ function showproduct(div, title, description, price, id){
                       <img class="product_img" src="/images/pic1.jpg" alt="painting">
                       <h2 class="product_title">${title}</h2>
                       <p class="product_description">${description}</p>
-                      <p class="product_price">${price} kr</p>
+                      <p class="product_price">${price}</p>
+                      <span>kr</span>
                       <button id="addCartBtn">Lägg till i varukorg</button>
                       <button id="edit">edit</button>
                       <button id="delete">delete</button>
@@ -159,7 +171,7 @@ function showCartItem(div, title, price, id){
                             <img src="" alt="merchpic">
                             <span class="item-name">${title}</span>
                         </div>
-                        <span class="item-price">${price}</span>
+                        <span class="item-price">${price} kr</span>
                         <div class="item-quantity-column">
                         <input type="number" value="1" class="item-quantity">
                         <button class="delete">delete</button>
@@ -179,15 +191,7 @@ function clearElement(elements){
   })
 }
 
-function calculateTotal(form){
-  let sum = 0;
 
-  form.forEach( product => {
-    sum += product.price;
-  })
-
-  return sum;
-}
 
 function clearInput(inputs){
   inputs.forEach( input => {
@@ -215,6 +219,7 @@ var quantityInput = document.getElementsByClassName("item-quantity")
 for (var i = 0; i <quantityInput.length; i++) {
     var input = quantityInput[i]
     input.addEventListener("change", quantityChange)
+    console.log(quantityInput[i]);
 }
 
 /* var addToCartBtn = document.getElementById("addCartBtn") 
@@ -245,12 +250,12 @@ function quantityChange(event) {
   updateTotal()
 }
 
-function addToCartClicked(event) {
+/* function addToCartClicked(event) {
   var button = event.target
   var shopItem = button.parentElement
   var title = shopItem.getElementsByClassName("product_title")[0].innerText
   console.log(title);
-}
+} */
 
 function updateTotal() {
   var dropDownContent = document.getElementsByClassName("dropdown-content")[0]
@@ -266,6 +271,8 @@ function updateTotal() {
   } 
    document.getElementsByClassName("total-price")[0].innerText = total + "kr"
 } 
+
+
 
 
 

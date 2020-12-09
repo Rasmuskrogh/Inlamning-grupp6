@@ -3,6 +3,7 @@ const addTitle = document.querySelector("#add_title");
 const addInfo = document.querySelector("#add_info");
 const addPrice = document.querySelector("#add_price");
 const productDiv = document.querySelector("#products .productlist");
+const cartItems = document.querySelector(".cart-items")
 
 // Array som allt sparas i
 //PRODUCT LIST stringifyed för att local storage sa fungera
@@ -19,6 +20,7 @@ const DELETE = "delete", EDIT = "edit", ADDTOCART = "addCartBtn";
 
 PRODUCT_LIST = JSON.parse(localStorage.getItem("PRODUCT_LIST")) || [];
 updateUI();
+
 
 //eventlistener för knappar
 
@@ -83,10 +85,20 @@ function editProduct(product){
   deleteProduct(product);
 }
 
-//Buy product function för att pusha object till SHOPPING_CART
+//Add to cart function för att pusha object till SHOPPING_CART
 
 function addToCart(product){
-  SHOPPING_CART.push(product);
+  let productTitle = document.querySelector(".product_title");
+  let productPrice = document.querySelector(".product_price");
+ 
+    let cartItem = {
+    title : productTitle.innerHTML,
+    price : productPrice.innerHTML
+    } 
+  
+  
+  SHOPPING_CART.push(cartItem);
+  updateUI();
   console.log(SHOPPING_CART);
 }
 
@@ -95,7 +107,6 @@ function updateUI(){
   balance = calculateTotal;
 
   //Rensar input fälten i productDiv
-  console.log( [productDiv] );
   clearElement( [productDiv] ) ;
 
   //kör showproduct function och visar den i productDiv, index för att få id på varje produkt
@@ -103,9 +114,17 @@ function updateUI(){
     showproduct(productDiv, product.title, product.description, product.price, index)
 
   })
+  //Kör show cartItem för att visa produkter i varukorg, körs även när man klickar delete måste ha nått if statement
+  SHOPPING_CART.forEach( (cartItem, index) => {
+    showCartItem(cartItems, cartItem.title, cartItem.price, index)
+
+
+  })
 
   //sparar product på local storage
   localStorage.setItem("PRODUCT_LIST", JSON.stringify(PRODUCT_LIST));
+  
+
 
 }
 
@@ -131,6 +150,26 @@ function showproduct(div, title, description, price, id){
   const position = "afterbegin";
 
   div.insertAdjacentHTML(position, product);
+}
+
+function showCartItem(div, title, price, id){
+
+  const cartItem = `<div id = "${id}" class="cart-item">
+                        <div>
+                            <img src="" alt="merchpic">
+                            <span class="item-name">${title}</span>
+                        </div>
+                        <span class="item-price">${price}</span>
+                        <div class="item-quantity-column">
+                        <input type="number" value="1" class="item-quantity">
+                        <button class="delete">delete</button>
+                        </div>
+                    </div>`;
+
+  // afterbegin för att få senast tillagda överst i listan
+  const position = "afterbegin";
+
+  div.insertAdjacentHTML(position, cartItem);
 }
 
 function clearElement(elements){
@@ -178,11 +217,11 @@ for (var i = 0; i <quantityInput.length; i++) {
     input.addEventListener("change", quantityChange)
 }
 
-var addToCartBtn = document.getElementById("addCartBtn") 
+/* var addToCartBtn = document.getElementById("addCartBtn") 
 for (var i = 0; i <addToCartBtn.length; i++) {
     var button = addToCartBtn[i]
     button.addEventListener("click", addToCartClicked)  
-}
+} */
 } 
 
 function myFunction() {
@@ -193,6 +232,8 @@ function myFunction() {
 function removeItem(event) {
   var btnClicked = event.target
   btnClicked.parentElement.parentElement.remove()
+  /* SHOPPING_CART.splice( cartItem.id, 1);
+  console.log(cartItem); */
   updateTotal()
 }
 

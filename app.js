@@ -88,10 +88,10 @@ function editProduct(product){
 }
 
 //Add to cart function för att pusha object till SHOPPING_CART
-
+// product.queryselector används för att få innerHTML från den produkten man klickar på
 function addToCart(product){
-  let productTitle = document.querySelector(".product_title");
-  let productPrice = document.querySelector(".product_price");
+  let productTitle = product.querySelector(".product_title");
+  let productPrice = product.querySelector(".product_price");
  
     let cartItem = {
     title : productTitle.innerHTML,
@@ -104,17 +104,19 @@ function addToCart(product){
   console.log(SHOPPING_CART);
 }
 
-//Kör show cartItem för att visa produkter i varukorg
+
+
+
 
 function showCart (){
     
-    SHOPPING_CART.forEach( (cartItem, index) => {
+    SHOPPING_CART.map( (cartItem, index) => {
       showCartItem(cartItems, cartItem.title, cartItem.price, index)
   
   
     })
-   
-}
+   console.log(cartItems);
+} 
 
 
 
@@ -219,7 +221,7 @@ var quantityInput = document.getElementsByClassName("item-quantity")
 for (var i = 0; i <quantityInput.length; i++) {
     var input = quantityInput[i]
     input.addEventListener("change", quantityChange)
-    console.log(quantityInput[i]);
+    
 }
 
 /* var addToCartBtn = document.getElementById("addCartBtn") 
@@ -270,15 +272,4 @@ function updateTotal() {
       total = total + (price * quantity)
   } 
    document.getElementsByClassName("total-price")[0].innerText = total + "kr"
-} 
-
-
-
-
-
-
-
-
-
-
-
+}

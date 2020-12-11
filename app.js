@@ -29,18 +29,23 @@ uploadBtn.addEventListener("click" , newProduct);
 
 // Function för att pusha allt till array när uploadknappen är klickad
 function newProduct(e){ 
-  e.preventDefault();
+  //e.preventDefault();
   //if statement för att alla fält måste vara ifyllda
 if(!addTitle.value || !addInfo.value || !addPrice.value) return;
   // spara allt i PRODUCT_LIST
+  //parseInt för att få price till Number
   let product = {
       title : addTitle.value,
       description : addInfo.value,
-      price : addPrice.value
+      price : parseInt(addPrice.value)
   }
   PRODUCT_LIST.push(product);
 
   updateUI();
+
+  //logra i localstorage 
+
+
   clearInput( [addTitle, addInfo, addPrice] );
 
 }
@@ -58,6 +63,8 @@ function deleteEditCart(event){
   }else if(targetBtn.id == EDIT ){
     editProduct(product);
   }else if(targetBtn.id == ADDTOCART ){
+
+    console.log(" kor ")
     addToCart(product);
   }
 
@@ -89,19 +96,36 @@ function editProduct(product){
 
 //Add to cart function för att pusha object till SHOPPING_CART
 // product.queryselector används för att få innerHTML från den produkten man klickar på
+//parseInt för att få price till Number
+let cartItem={}
+
 function addToCart(product){
+  
   let productTitle = product.querySelector(".product_title");
   let productPrice = product.querySelector(".product_price");
  
-    let cartItem = {
-    title : productTitle.innerHTML,
-    price : productPrice.innerHTML
-    } 
-  
-  
+   
+  console.log(cartItem)
+  cartItem.title = productTitle.innerHTML
+  cartItem.price = parseInt(productPrice.innerHTML)
+
   SHOPPING_CART.push(cartItem);
+
+  const localData = localStorage.getItem("cartList");
+
+  const existingData = JSON.parse(localData);
+
+  console.log(existingData)
+
+  const cleanedData = existingData ? existingData.concat(SHOPPING_CART) : SHOPPING_CART ;
+
+  localStorage.setItem("cartList", JSON.stringify(cleanedData)); 
+
+
   showCart();
-  console.log(SHOPPING_CART);
+
+  location.reload();
+  
 }
 
 
@@ -252,12 +276,12 @@ function quantityChange(event) {
   updateTotal()
 }
 
-/* function addToCartClicked(event) {
+/*  function addToCartClicked(event) {
   var button = event.target
   var shopItem = button.parentElement
   var title = shopItem.getElementsByClassName("product_title")[0].innerText
   console.log(title);
-} */
+}  */
 
 function updateTotal() {
   var dropDownContent = document.getElementsByClassName("dropdown-content")[0]

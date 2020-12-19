@@ -8,17 +8,12 @@
 
 .wrapper {
   width: 80%;
-  max-width: 900px;
   margin: auto;
   background-color: #f7f7f7; }
 
 main {
-  height: 65vh;
+  height: 70vh;
   border: 1px solid black; }
-
-header {
-  display: flex;
-  justify-content: flex-end; }
 
 /* Dropdown Button */
 .dropbtn {
@@ -82,16 +77,20 @@ input[type=number] {
   height: 15; }
 
 /* product section */
-#products {
-  height: 50vh; }
-
+/* #products {   
+  display: flex;
+  
+} */
 .productlist {
-  display: flex; }
+  display: flex;
+  align-content: space-between;
+  border: 1px solid red; }
 
 .product-card {
   display: flex;
   flex-direction: column;
   width: 15%;
+  height: 20px;
   text-align: center;
   border: 1px solid black; }
 
@@ -140,3 +139,8 @@ a:hover {
   color: #00A0C6;
   text-decoration: none;
   cursor: pointer; }
+
+header {
+  display: flex;
+  height: 15vh;
+  justify-content: flex-end; }

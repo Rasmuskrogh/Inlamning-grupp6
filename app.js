@@ -228,10 +228,10 @@ function showCart() {
   const data = localStorage.getItem("cartList")
   const parsedData = JSON.parse(data)
   const itemContainer = document.querySelector(".cart-items")
-  Object.values(parsedData).map(item => {
+  Object.values(parsedData).map((item , index) => {
     itemContainer.innerHTML += `
-      <div class="cart-item>
-        <img class="cart_product_img" src="">
+      <div id="${index}" class="cart-item>
+      <img class="cart_product_img" src="${item.img}">
       <span class="cart_product_title">${item.title}</span>
       <span class="cart_product_price">${item.price}</span>
       <input class="cart-quantity-input" type="number" value="1">

@@ -26,14 +26,15 @@ uploadBtn.addEventListener("click" , newProduct);
 
  async function searchPhotos(e) {
   e.preventDefault();
-  let accessKey = "zezTGXrl1WoKFEPFjbTOknYNWy0Im-5v_XUkLheIxR4";
-  let query = document.getElementById("search").value;
-  let url = "https://api.unsplash.com/photos/?client_id=" + accessKey + "&query="+query;
+  let accessKey = "zezTGXrl1WoKFEPFjbTOknYNWy0Im-5v_XUkLheIxR4";         // acceskey till unsplash
+  let query = document.getElementById("search").value;                   // sparar inputen i sökfältet som let query
+  let url = "https://api.unsplash.com/photos/?client_id=" + accessKey + "&query="+query;   // request url med vår accesskey och dynamisk query
   
   // request till api som returnerar json data
 
   let apiArray = []
 
+  // fetchar data och konverterar den till json
   await fetch(url)
   .then(function (data) {
       return data.json();
@@ -52,7 +53,7 @@ uploadBtn.addEventListener("click" , newProduct);
   });
   // Använder getRandom funktionen för att välja en random url i arrayen och returnera den, så att vi kan använda den i newProduct funktionen
   let randomNum = getRandom(0,9);
-  console.log(apiArray[randomNum]);
+  
   return apiArray[randomNum];
   
 }  
@@ -68,7 +69,6 @@ let productItem = {};
 
 async function newProduct(e){ 
   e.preventDefault();
-  console.log(e);
   //if statement för att alla fält måste vara ifyllda
 if(!addTitle.value || !addInfo.value || !addPrice.value) return;
   //parseInt för att få price till Number
@@ -134,7 +134,8 @@ function deleteProduct(product){
 //edit function som gör att man kan ändra alla inputs och tar bort produkten man vill ändra
 function editProduct(product){
   let PRODUCT = PRODUCT_LIST[product.id];
-
+  
+  console.log(PRODUCT);
   addTitle.value = PRODUCT.title;
   addInfo.value = PRODUCT.description;
   addPrice.value = PRODUCT.price;
@@ -182,6 +183,7 @@ function showProduct(){
   
   const productData = localStorage.getItem("productList")
   const parsedProductData = JSON.parse(productData)
+  // mappar igenom parsad data från localstorage och visar i productDiv, index för att få id på produkten
   Object.values(parsedProductData).map((item , index) => {
     productDiv.innerHTML += `
                         <div id="${index}" class="product-card">
@@ -224,10 +226,12 @@ window.onclick = function(event) {
   }
 }
 
+// Showcart funktion för att visa cartitems i varukorg, körs om if statement längst ner i js stämmer
 function showCart() {
   const data = localStorage.getItem("cartList")
   const parsedData = JSON.parse(data)
   const itemContainer = document.querySelector(".cart-items")
+  // mappar igenom parsad data från localstorage och visar i itemContainer, index för att få id på produkten
   Object.values(parsedData).map((item , index) => {
     itemContainer.innerHTML += `
       <div id="${index}" class="cart-item>

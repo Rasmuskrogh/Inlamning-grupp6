@@ -189,7 +189,7 @@ function showProduct(){
                         <h2 class="product_title">${item.title}</h2>
                         <p class="product_description">${item.description}</p>
                         <p class="product_price">${item.price}</p>
-                        <span>kr</span>
+                        <span class="product_kr">kr</span>
                         <button id="addCartBtn">Lägg till i varukorg</button>
                         <button id="edit">edit</button>
                         <button id="delete">delete</button>

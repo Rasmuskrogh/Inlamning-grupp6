@@ -73,7 +73,7 @@ async function newProduct(e){
 if(!addTitle.value || !addInfo.value || !addPrice.value) return;
   //parseInt för att få price till Number
   let imgUrl = await searchPhotos(e);
-  
+      
       productItem.img = imgUrl;
       productItem.title = addTitle.value;
       productItem.description = addInfo.value;
@@ -97,7 +97,6 @@ if(!addTitle.value || !addInfo.value || !addPrice.value) return;
   location.reload();
   
 }
-
 
 
 //delete or edit function, kollar efter vilket id som stämmer och väljer parentnode som har knappen
@@ -133,12 +132,25 @@ function deleteProduct(product){
 
 //edit function som gör att man kan ändra alla inputs och tar bort produkten man vill ändra
 function editProduct(product){
-  let PRODUCT = PRODUCT_LIST[product.id];
-  
-  console.log(PRODUCT);
-  addTitle.value = PRODUCT.title;
-  addInfo.value = PRODUCT.description;
-  addPrice.value = PRODUCT.price;
+
+// läsa localstorage 
+
+const editProd = JSON.parse(localStorage.getItem("productList"))
+
+// find funktion på parsad localstorage, för att välja rätt produkt att redigera  
+ const ex=  editProd.find( (item , index)=> index == product.id)
+
+// redigera 
+
+addTitle.value = ex.title;
+addInfo.value = ex.description;
+addPrice.value = ex.price;
+
+// pusha in den i localstorage igen
+
+localStorage.setItem("productList" , JSON.stringify (editProd));
+
+// tabort produkten som har redigerats
 
   deleteProduct(product);
 }
@@ -175,7 +187,6 @@ function localStorageCart(product){
   location.reload();
   
 }
-
 
 // showProduct function
  

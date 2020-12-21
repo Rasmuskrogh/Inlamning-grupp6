@@ -6,9 +6,8 @@
     <title>Våran e-handel</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="dropdown.css">
     <script src="app.js" defer> </script>
-    <script src="header.js" async></script>
+
 </head>
 <body>
 <div class="wrapper">
@@ -17,42 +16,15 @@
         <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">Varukorg</button>
             <div id="myDropdown" class="dropdown-content">
-                <div class="cart-item">
-                    <div>
-                        <img src="" alt="merchpic">
-                        <span class=item-name> Item 1</span>
-                    </div>
-                    <span class="item-price">250kr</span>
-                    <div class="item-quantity-column">
-                        <input type="number" value="1" class="item-quantity">
-                        <button class="delete">delete</button>
-                    </div>
-              </div>
-              <div class="cart-item">
-                    <div>
-                        <img src="" alt="merchpic">
-                        <span class="item-name"> Item 2</span>
-                    </div>
-                    <span class="item-price">250kr</span>
-                    <div class="item-quantity-column">
-                        <input type="number" value="1" class="item-quantity">
-                        <button class="delete">delete</button>
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <div>
-                        <img src="" alt="merchpic">
-                        <span class="item-name"> Item 3</span>
-                    </div>
-                    <span class="item-price">250kr</span>
-                    <div class="item-quantity-column">
-                        <input type="number" value="1" class="item-quantity">
-                        <button class="delete">delete</button>
-                    </div>
-              </div>
+                <div class="cart-items">
+                
+            </div>
             <div class="sum-total">
                 <strong>Totalt</strong>
-                <span class="total-price"></span></span>
+                <span class="total-price"></span>
+            </div>
+            <div>
+                <button id="deleteCart">Rensa</button>
             </div>
             </div>
           </div>
@@ -64,35 +36,21 @@
             <input id="add_title" type="text" placeholder="Titel på produkt">
             <input id="add_info" type="text" placeholder="Beskrivning">
             <input id="add_price" type="number" placeholder="Pris">
-    
-            
-    
+            <input type="text" id="search" placeholder="Sök efter bild">
+            <!-- funktionen måste ha event för att prevent default ska fungera i js filen -->
+            <button onclick="searchPhotos(event)">Sök</button>
             <button id="uploadBtn">Lägg till produkt</button>
-    
-    
-    
         </form>
         
-       
-
-
-
-       <section id="products">
-       <div class="productlist">
-
-
-
-       </div>
-       </section>
-
-
+    
+        <section id="products">
+            <div class="productlist">
+            <!-- här pushas produkterna in -->
+            </div>
+        </section>
 
     </main>
- 
-
-
-
-
+    
     <footer>
         <div class="footer_left">
             <a href="www.facebook.com/vårhemsida"><i class="fab fa-facebook-square"></i> Facebook</a>
@@ -106,7 +64,7 @@
             <a href="contact.html">Kundservice</a>
             <a href="about.html">Om oss</a>
         </div>
-</footer>
+    </footer>
 
 </div>
 </body>

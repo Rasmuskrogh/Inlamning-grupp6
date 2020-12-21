@@ -1,0 +1,71 @@
+/* För att ta bort styling på "add_amount"-fältet */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield; }
+
+
+#add_form {
+    
+    display:flex;
+    flex-direction: column;
+    align-items: center; 
+    border:1px solid black;
+    width:70%;
+    height:15;   
+}
+
+/* product section */
+/* #products {   
+  display: flex;
+  
+} */
+
+// All css måste fixas
+
+// flex container  
+
+.productlist {
+    display: flex;
+    align-content: space-between;
+    border: 1px solid red;
+}
+
+// flex items 
+
+.product-card {
+    display:flex;
+    flex-direction: column;
+    width:15%;
+    height:20px;
+    text-align: center;
+    border:1px solid black;
+
+}
+
+
+
+/*
+alla produkt element
+
+.product_img  
+
+.product_title
+
+.product_description
+
+.product_price
+
+.product_kr
+
+#addCartBtn 
+
+#edit 
+
+#delete 
+*/ 

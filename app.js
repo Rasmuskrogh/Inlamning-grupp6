@@ -26,7 +26,7 @@ uploadBtn.addEventListener("click" , newProduct);
 
  async function searchPhotos(e) {
   e.preventDefault();
-  let accessKey = "zezTGXrl1WoKFEPFjbTOknYNWy0Im-5v_XUkLheIxR4";         // acceskey till unsplash
+  let accessKey = "zezTGXrl1WoKFEPFjbTOknYNWy0Im-5v_XUkLheIxR4";         // accesskey till unsplash
   let query = document.getElementById("search").value;                   // sparar inputen i sökfältet som let query
   let url = "https://api.unsplash.com/photos/?client_id=" + accessKey + "&query="+query;   // request url med vår accesskey och dynamisk query
   
@@ -71,13 +71,13 @@ async function newProduct(e){
   e.preventDefault();
   //if statement för att alla fält måste vara ifyllda
 if(!addTitle.value || !addInfo.value || !addPrice.value) return;
-  //parseInt för att få price till Number
+  //
   let imgUrl = await searchPhotos(e);
       
       productItem.img = imgUrl;
       productItem.title = addTitle.value;
       productItem.description = addInfo.value;
-      productItem.price = parseInt(addPrice.value);
+      productItem.price = parseInt(addPrice.value);    //parseInt för att få price till Number
   
   //Pusha productItem objectet till PRODUCT_list    
   PRODUCT_LIST.push(productItem);

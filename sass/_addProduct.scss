@@ -3,69 +3,84 @@
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0; }
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield; }
-
-
-#add_form {
-    
-    display:flex;
-    flex-direction: column;
-    align-items: center; 
-    border:1px solid black;
-    width:70%;
-    height:15;   
+  margin: 0;
 }
 
-/* product section */
-/* #products {   
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#add_form {
   display: flex;
-  
-} */
+  flex-direction: row;
+  align-content: center;
+  width: 100%;
+  height: 5vh;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
 
 // All css måste fixas
 
-// flex container  
+// flex container
 
 .productlist {
-    display: flex;
-    align-content: space-between;
-    border: 1px solid red;
+  height: 65vh;
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-// flex items 
+// flex items
 
 .product-card {
-    display:flex;
-    flex-direction: column;
-    width:15%;
-    height:20px;
-    text-align: center;
-    border:1px solid black;
-
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  flex-grow: 1;
+  flex-basis: 16%;   // Så det blir 5 st på varje rad
+  text-align: center;
 }
 
+//För att det ska bli 4 produkter på samma rad 
+@media (max-width: 920px) {
+  .product-card {
+    flex: 1 21%;
+  }
+}
 
+//För att dom två första produkterna ska visas stort
+.productlist .product-card:first-child, 
+.productlist .product-card:nth-child(2) {
+  flex: 2 46%;
+}
 
-/*
-alla produkt element
+// Två produkter brevid varann i mobilversion
+@media (max-width: 600px) {
+  .product-card {
+    flex: 1 46%;
+  }
+}
 
-.product_img  
+// alla produkt element
 
-.product_title
+.product_img {
+  max-width: 100%;
+}
 
-.product_description
+// .product_title
 
-.product_price
+// .product_description
 
-.product_kr
+// .product_price
 
-#addCartBtn 
+// .product_kr
 
-#edit 
+// #addCartBtn
 
-#delete 
-*/ 
+// #edit
+
+// #delete

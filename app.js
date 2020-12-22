@@ -5,7 +5,8 @@ const addTitle = document.querySelector("#add_title");
 const addInfo = document.querySelector("#add_info");
 const addPrice = document.querySelector("#add_price");
 const productDiv = document.querySelector("#products .productlist");
-const cartItems = document.querySelector("#cart-items")
+const cartItems = document.querySelector("#cart-items");
+const clearCartBtn = document.querySelector("#deleteCart");
 
 // Arrayer som allt sparas i
 
@@ -22,7 +23,7 @@ const DELETE = "delete", EDIT = "edit", ADDTOCART = "addCartBtn", DELETECART = "
 productDiv.addEventListener("click", deleteEditCart);
 uploadBtn.addEventListener("click" , newProduct);
 cartItems.addEventListener("click", deleteCart); 
-
+clearCartBtn.addEventListener("click" , clearCart)
 //api funktion för bilder
 
 
@@ -161,6 +162,13 @@ function deleteVarukorg(product){
    
    localStorage.setItem("cartList" , JSON.stringify (CART_LIST));
    location.reload();
+}
+
+// ClearCart funktion för att rensa varukorgen
+
+function clearCart(){
+  localStorage.removeItem("cartList");
+  location.reload();
 }
 
 //edit function som gör att man kan ändra alla inputs och tar bort produkten man vill ändra

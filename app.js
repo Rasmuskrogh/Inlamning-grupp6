@@ -5,21 +5,23 @@ const addTitle = document.querySelector("#add_title");
 const addInfo = document.querySelector("#add_info");
 const addPrice = document.querySelector("#add_price");
 const productDiv = document.querySelector("#products .productlist");
-const cartItems = document.querySelector(".cart-items")
+const cartItems = document.querySelector("#cart-items")
 
 // Arrayer som allt sparas i
 
 let PRODUCT_LIST = [];
 let SHOPPING_CART = [];
+let CART_LIST = [];
 
 //För delete och edit knappar 
 
-const DELETE = "delete", EDIT = "edit", ADDTOCART = "addCartBtn";
+const DELETE = "delete", EDIT = "edit", ADDTOCART = "addCartBtn", DELETECART = "cart_delete";
 
 //eventlistener för knappar
 
 productDiv.addEventListener("click", deleteEditCart);
 uploadBtn.addEventListener("click" , newProduct);
+cartItems.addEventListener("click", deleteCart); 
 
 //api funktion för bilder
 
@@ -103,17 +105,40 @@ if(!addTitle.value || !addInfo.value || !addPrice.value) return;
 
 function deleteEditCart(event){
   const targetBtn = event.target;
+  
+  console.log(targetBtn);
 
   const product = targetBtn.parentNode;
   
   if ( targetBtn.id == DELETE ){
     deleteProduct(product);
 
-  }else if(targetBtn.id == EDIT ){
-    editProduct(product);
-  }else if(targetBtn.id == ADDTOCART ){
+  }
+  
+  
+   else if(targetBtn.id == EDIT ){
+      editProduct(product);
+    }
+    else if(targetBtn.id == ADDTOCART ){
     localStorageCart(product);
   }
+  else if(targetBtn.id == DELETECART ){
+    deleteProduct(product);
+   } 
+
+}
+
+
+function deleteCart (event){
+  const targetbtnCart = event.target;
+  
+  console.log(targetbtnCart);
+
+  const product = targetbtnCart.parentNode;
+  
+  if(targetbtnCart.id == DELETECART ){
+    deleteVarukorg(product);
+   } 
 
 }
 
@@ -127,6 +152,14 @@ function deleteProduct(product){
   PRODUCT_LIST.splice( product.id, 1);
    
    localStorage.setItem("productList" , JSON.stringify (PRODUCT_LIST));
+   location.reload();
+}
+
+function deleteVarukorg(product){
+  CART_LIST = JSON.parse(localStorage.getItem("cartList"));
+  CART_LIST.splice( product.id, 1);
+   
+   localStorage.setItem("cartList" , JSON.stringify (CART_LIST));
    location.reload();
 }
 
@@ -241,17 +274,16 @@ window.onclick = function(event) {
 function showCart() {
   const data = localStorage.getItem("cartList")
   const parsedData = JSON.parse(data)
-  const itemContainer = document.querySelector(".cart-items")
   // mappar igenom parsad data från localstorage och visar i itemContainer, index för att få id på produkten
   Object.values(parsedData).map((item , index) => {
-    itemContainer.innerHTML += `
+    cartItems.innerHTML += `
       <div id="${index}" class="cart-item>
       <img class="cart_product_img" src="${item.img}">
       <span class="cart_product_title">${item.title}</span>
       <span class="cart_product_price">${item.price}</span>
       <input class="cart-quantity-input" type="number" value="1">
-      <button class="cart_delete" type="button">REMOVE</button>
-  </div>`
+      <button id="cart_delete" type="button">REMOVE</button>
+  </div>`;
  
   })
 }

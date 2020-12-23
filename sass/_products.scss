@@ -1,31 +1,6 @@
-/* För att ta bort styling på "add_amount"-fältet */
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-#add_form {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  width: 100%;
-  height: 5vh;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-}
-
-// All css måste fixas
-
 // flex container
 
-.adminProductlist {
+.productlist {
   height: 65vh;
   overflow: scroll;
   overflow-y: auto;
@@ -51,6 +26,12 @@ input[type="number"] {
   .product-card {
     flex: 1 21%;
   }
+}
+
+//För att dom två första produkterna ska visas stort
+.productlist .product-card:first-child,
+.productlist .product-card:nth-child(2) {
+  flex: 2 46%;
 }
 
 // Två produkter brevid varann i mobilversion

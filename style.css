@@ -92,7 +92,8 @@ input[type="number"] {
   padding: 2%;
   flex-grow: 1;
   flex-basis: 16%;
-  text-align: center; }
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
 
 @media (max-width: 920px) {
   .product-card {
@@ -107,7 +108,8 @@ input[type="number"] {
     flex: 1 46%; } }
 
 .product_img {
-  max-width: 100%; }
+  max-width: 100%;
+  border: 1px solid black; }
 
 footer {
   border: 1px solid black;

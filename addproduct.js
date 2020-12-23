@@ -161,9 +161,8 @@ async function searchPhotos(e) {
                           <p class="product_description">${item.description}</p>
                           <p class="product_price">${item.price}</p>
                           <span class="product_kr">kr</span>
-                          <button id="addCartBtn">Lägg till i varukorg</button>
-                          <button id="edit">edit</button>
-                          <button id="delete">delete</button>
+                          <button id="edit">Ändra produkt</button>
+                          <button id="delete">Radera produkt</button>
                           </div>`;
     })
   } 

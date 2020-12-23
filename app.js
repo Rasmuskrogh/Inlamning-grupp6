@@ -8,7 +8,7 @@ const productDiv = document.querySelector("#products .productlist");
 const cartItems = document.querySelector("#cart-items");
 const clearCartBtn = document.querySelector("#deleteCart");
 
-// Arrayer som allt sparas i
+// Array som prudukter i shoppingcart sparas i
 
 let SHOPPING_CART = [];
 
@@ -22,7 +22,7 @@ productDiv.addEventListener("click", addDeleteCart);
 cartItems.addEventListener("click", deleteCart); 
 clearCartBtn.addEventListener("click" , clearCart)
 
-//delete or edit function, kollar efter vilket id som stämmer och väljer parentnode som har knappen
+//För add to cart och delete produkt i cart, kollar efter vilket id som stämmer och väljer parentnode som har knappen
 
 function addDeleteCart(event){
   const targetBtn = event.target;

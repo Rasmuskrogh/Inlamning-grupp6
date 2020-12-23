@@ -10,117 +10,26 @@ const clearCartBtn = document.querySelector("#deleteCart");
 
 // Arrayer som allt sparas i
 
-let PRODUCT_LIST = [];
 let SHOPPING_CART = [];
-let CART_LIST = [];
 
-//För delete och edit knappar 
+//För add to cart och delete cart knapparna 
 
-const DELETE = "delete", EDIT = "edit", ADDTOCART = "addCartBtn", DELETECART = "cart_delete";
+const ADDTOCART = "addCartBtn", DELETECART = "cart_delete";
 
 //eventlistener för knappar
 
-productDiv.addEventListener("click", deleteEditCart);
-uploadBtn.addEventListener("click" , newProduct);
+productDiv.addEventListener("click", addDeleteCart);
 cartItems.addEventListener("click", deleteCart); 
 clearCartBtn.addEventListener("click" , clearCart)
-//api funktion för bilder
-
-
- async function searchPhotos(e) {
-  e.preventDefault();
-  let accessKey = "zezTGXrl1WoKFEPFjbTOknYNWy0Im-5v_XUkLheIxR4";         // accesskey till unsplash
-  let query = document.getElementById("search").value;                   // sparar inputen i sökfältet som let query
-  let url = "https://api.unsplash.com/photos/?client_id=" + accessKey + "&query="+query;   // request url med vår accesskey och dynamisk query
-  
-  // request till api som returnerar json data
-
-  let apiArray = []
-
-  // fetchar data och konverterar den till json
-  await fetch(url)
-  .then(function (data) {
-      return data.json();
-  })
-  .then(function(data) {
-      
-     //mappar igenom json data och pushar upp 10st url's i apiarrayen
-     data.map(photo => {
-         
-          let result = `${photo.urls.small}`;
-          
-          apiArray.push(result);
-           
-      });
-      
-  });
-  // Använder getRandom funktionen för att välja en random url i arrayen och returnera den, så att vi kan använda den i newProduct funktionen
-  let randomNum = getRandom(0,9);
-  
-  return apiArray[randomNum];
-  
-}  
-
-// funktion som returnerar ett random nummer mellan min och max
-
-function getRandom (min , max){
-  return Math.floor(Math.random()*(max-min))+min;
-}   
-
-// Funktion för att skapa en ny produkt, måste vara async för att api ska fungera, preventdefault för att den ligger i en form tag
-let productItem = {};
-
-async function newProduct(e){ 
-  e.preventDefault();
-  //if statement för att alla fält måste vara ifyllda
-if(!addTitle.value || !addInfo.value || !addPrice.value) return;
-  //
-  let imgUrl = await searchPhotos(e);
-      
-      productItem.img = imgUrl;
-      productItem.title = addTitle.value;
-      productItem.description = addInfo.value;
-      productItem.price = parseInt(addPrice.value);    //parseInt för att få price till Number
-  
-  //Pusha productItem objectet till PRODUCT_list    
-  PRODUCT_LIST.push(productItem);
-
-  //Kolla om det finns produkter i localstorage, om det finns concat array annars lägg till i PRODUCT_LIST
-  const localProductData = localStorage.getItem("productList");
-
-  const existingProductData = JSON.parse(localProductData);
-
-  const cleanedProductData = existingProductData ? existingProductData.concat(PRODUCT_LIST) : PRODUCT_LIST ;
-
-  localStorage.setItem("productList", JSON.stringify(cleanedProductData)); 
-
-  //Rensa inputfälten
-  clearInput( [addTitle, addInfo, addPrice] );
-  //Uppdatera sidan för att localstorage ska visas och api ska fungera
-  location.reload();
-  
-}
-
 
 //delete or edit function, kollar efter vilket id som stämmer och väljer parentnode som har knappen
 
-function deleteEditCart(event){
+function addDeleteCart(event){
   const targetBtn = event.target;
   
-  console.log(targetBtn);
-
   const product = targetBtn.parentNode;
   
-  if ( targetBtn.id == DELETE ){
-    deleteProduct(product);
-
-  }
-  
-  
-   else if(targetBtn.id == EDIT ){
-      editProduct(product);
-    }
-    else if(targetBtn.id == ADDTOCART ){
+  if(targetBtn.id == ADDTOCART ){
     localStorageCart(product);
   }
   else if(targetBtn.id == DELETECART ){
@@ -133,8 +42,6 @@ function deleteEditCart(event){
 function deleteCart (event){
   const targetbtnCart = event.target;
   
-  console.log(targetbtnCart);
-
   const product = targetbtnCart.parentNode;
   
   if(targetbtnCart.id == DELETECART ){
@@ -144,17 +51,7 @@ function deleteCart (event){
 }
 
 
-// delete och edit och addToCart funktioner
-
-
-//delete function för att tabort rätt product i localstorage, väljer efter id och sparar sen igen. Location reload för att uppdatera sidan.
-function deleteProduct(product){
-  PRODUCT_LIST = JSON.parse(localStorage.getItem("productList"));
-  PRODUCT_LIST.splice( product.id, 1);
-   
-   localStorage.setItem("productList" , JSON.stringify (PRODUCT_LIST));
-   location.reload();
-}
+// För deleteknapparna på produkter i varukorgen
 
 function deleteVarukorg(product){
   CART_LIST = JSON.parse(localStorage.getItem("cartList"));
@@ -169,31 +66,6 @@ function deleteVarukorg(product){
 function clearCart(){
   localStorage.removeItem("cartList");
   location.reload();
-}
-
-//edit function som gör att man kan ändra alla inputs och tar bort produkten man vill ändra
-function editProduct(product){
-
-// läsa localstorage 
-
-const editProd = JSON.parse(localStorage.getItem("productList"))
-
-// find funktion på parsad localstorage, för att välja rätt produkt att redigera  
- const ex=  editProd.find( (item , index)=> index == product.id)
-
-// redigera 
-
-addTitle.value = ex.title;
-addInfo.value = ex.description;
-addPrice.value = ex.price;
-
-// pusha in den i localstorage igen
-
-localStorage.setItem("productList" , JSON.stringify (editProd));
-
-// tabort produkten som har redigerats
-
-  deleteProduct(product);
 }
 
 //För att lägga till producter i lokalstorage cart
@@ -245,18 +117,10 @@ function showProduct(){
                         <p class="product_price">${item.price}</p>
                         <span class="product_kr">kr</span>
                         <button id="addCartBtn">Lägg till i varukorg</button>
-                        <button id="edit">edit</button>
-                        <button id="delete">delete</button>
                         </div>`;
   })
 } 
 
-// Anvönds i newProduct för att rensa inputfälten
-function clearInput(inputs){
-    inputs.forEach( input => {
-      input.value = "";
-    })
-}
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */

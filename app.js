@@ -7,7 +7,7 @@ const addPrice = document.querySelector("#add_price");
 const productDiv = document.querySelector("#products .productlist");
 const cartItems = document.querySelector("#cart-items");
 const clearCartBtn = document.querySelector("#deleteCart");
-
+const loginBtn = document.querySelector("#loginBtn");
 // Array som prudukter i shoppingcart sparas i
 
 let SHOPPING_CART = [];
@@ -20,7 +20,28 @@ const ADDTOCART = "addCartBtn", DELETECART = "cart_delete";
 
 productDiv.addEventListener("click", addDeleteCart);
 cartItems.addEventListener("click", deleteCart); 
-clearCartBtn.addEventListener("click" , clearCart)
+clearCartBtn.addEventListener("click" , clearCart);
+loginBtn.addEventListener("click" , login);
+
+//Login funktion för att visa addproduct sidan
+function login(e){
+  e.preventDefault();
+  const userNameValue = document.querySelector("#username").value;   
+  const passwordValue = document.querySelector("#password").value;
+  const username = "123";
+  const password = "123";
+  const footerItems = document.querySelectorAll(".footer_item");     // väljer alla länkar i footer_right
+  
+  if(userNameValue == username && passwordValue == password){
+    footerItems[1].classList.remove("hidden");                        // Om användarnamn och password stämmer, ta bort klassen hidden från addProduct länken 
+
+  }else if(userNameValue === !username && passwordValue === !password){
+    alert("Fel lösenord");    
+    console.log("fel losen")                                         // Fungerar inte, nått fel med else if. - Fel lösenord, alert.
+
+  }
+
+}
 
 //För add to cart och delete produkt i cart, kollar efter vilket id som stämmer och väljer parentnode som har knappen
 
@@ -32,9 +53,6 @@ function addDeleteCart(event){
   if(targetBtn.id == ADDTOCART ){
     localStorageCart(product);
   }
-  else if(targetBtn.id == DELETECART ){
-    deleteProduct(product);
-   } 
 
 }
 

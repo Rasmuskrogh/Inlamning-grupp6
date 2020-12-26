@@ -21,6 +21,14 @@ footer {
     
 }
 
+//.footer_item
+
+
+//hidden class för att dölja adminsida om man inte är inloggad
+.hidden {
+    display:none !important;
+}
+
 a {
     color: #0060B6;
     text-decoration: none;

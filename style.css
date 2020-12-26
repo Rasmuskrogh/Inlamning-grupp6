@@ -125,6 +125,9 @@ footer {
   flex-direction: column;
   justify-content: space-between; }
 
+.hidden {
+  display: none !important; }
+
 a {
   color: #0060B6;
   text-decoration: none; }
@@ -138,6 +141,10 @@ header {
   display: flex;
   height: 15vh;
   justify-content: flex-end; }
+
+.logIn {
+  display: flex;
+  flex-direction: column; }
 
 .productlist {
   height: 65vh;

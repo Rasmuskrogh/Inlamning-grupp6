@@ -1,8 +1,21 @@
 header {
-    display:flex;
+    display:flex; 
     height:15vh;
-    justify-content: flex-end;
+    justify-content: space-between
 }
+
+.headerLogo {
+border: 2px solid blue;
+
+}
+
+.headerLogo, h1{
+font-size: 70px;
+font-family: 'Caveat', cursive;
+
+
+}
+
 
 
 //Login formen

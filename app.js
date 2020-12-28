@@ -35,7 +35,7 @@ function login(e){
   if(userNameValue == username && passwordValue == password){
     footerItems[1].classList.remove("hidden");                        // Om användarnamn och password stämmer, ta bort klassen hidden från addProduct länken 
 
-  }else if(userNameValue === !username && passwordValue === !password){
+  }else{
     alert("Fel lösenord");    
     console.log("fel losen")                                         // Fungerar inte, nått fel med else if. - Fel lösenord, alert.
 

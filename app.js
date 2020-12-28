@@ -184,6 +184,20 @@ window.onclick = function(event) {
 function showCart() {
   const data = localStorage.getItem("cartList")
   const parsedData = JSON.parse(data)
+  //allt nytt
+  // let itemNames = cartItems.querySelectorAll(".cart_product_title")
+  // let localStorageItems = JSON.parse(localStorage.getItem("cartList"))
+  // let cartProductTitle = document.getElementsByClassName("product_title")
+  // console.log(localStorageItems)
+ 
+    // let cartItemTitles = Object.values(parsedData).map(item => 
+  //   item.title
+  // )
+ 
+  // if(!cartItemTitles.includes("dd")) {
+  //   console.log("finns redan")
+  // } else {}
+  
   // mappar igenom parsad data från localstorage och visar i itemContainer, index för att få id på produkten
   Object.values(parsedData).map((item , index) => {
     cartItems.innerHTML += `
@@ -196,6 +210,13 @@ function showCart() {
   </div>`;
  
   })
+
+  // for (var i = 0; i < itemNames.length; i++) {
+  //   if (itemNames[i].innerText == item.title) {
+  //     alert("Denna vara finns redan i varukorgen")
+  //     return
+  //   }
+  // }
 }
 
 //If statement som bara kör showProduct om det finns en produkt sparad i localstorage.

@@ -107,36 +107,132 @@ input[type="number"] {
   max-width: 100%;
   border: 1px solid black; }
 
-footer {
-  border: 1px solid black;
-  height: 15vh;
-  display: flex;
-  justify-content: space-between; }
-
-.footer_left {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
-
-.footer_right {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
-
 .hidden {
   display: none !important; }
 
-a {
-  color: #0060B6;
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+.footer {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 200px;
+  color: black; }
+
+.footer > * {
+  flex: 1 100%; }
+
+.footer_left {
+  margin-right: 1.25em;
+  margin-bottom: 2em; }
+
+.footer_left img {
+  width: 50%; }
+
+.footer h2 {
+  font-weight: 400;
+  font-size: 1rem; }
+
+.footer ul {
+  list-style: none;
+  padding-left: 0; }
+
+.footer li {
+  line-height: 2em; }
+
+.footer a {
   text-decoration: none; }
 
-a:hover {
-  color: #00A0C6;
-  text-decoration: none;
-  cursor: pointer; }
+.footer_right {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-flow: row wrap; }
 
+.footer_right > * {
+  flex: 1 50%;
+  margin-right: 1.25em; }
+
+.box a {
+  color: black; }
+
+.footer_bottom {
+  text-align: center;
+  color: black;
+  padding-top: 50px; }
+
+.footer_left p {
+  padding-right: 20%;
+  color: black; }
+
+.socials a {
+  background: #364a62;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px; }
+
+.socials a i {
+  color: #e7f2f4;
+  padding: 10px 12px;
+  font-size: 20px; }
+
+@media screen and (min-width: 600px) {
+  .footer_right > * {
+    flex: 1; }
+  .footer_left {
+    flex: 1 0px; }
+  .footer_right {
+    flex: 2 0px; } }
+
+/* footer {
+    border:1px solid black;
+    height:15vh;
+    display:flex;
+    justify-content: space-between;
+}
+
+.footer_left {
+    padding:1rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.footer_right {
+    padding:1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+//.footer_item
+
+
+//hidden class för att dölja adminsida om man inte är inloggad
+.hidden {
+    display:none !important;
+}
+
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+} */
 header {
   display: flex;
   height: 15vh;

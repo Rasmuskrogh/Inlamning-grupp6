@@ -133,7 +133,7 @@ function localStorageCart(product){
  
   // location reload för att uppdatera sidan så att localstorage fungerar
  
-  //location.reload();
+  location.reload();
   
 }
 

@@ -36,9 +36,7 @@ function login(e){
     footerItems[1].classList.remove("hidden");                        // Om användarnamn och password stämmer, ta bort klassen hidden från addProduct länken 
 
   }else{
-    alert("Fel lösenord");    
-    console.log("fel losen")                                         // Fungerar inte, nått fel med else if. - Fel lösenord, alert.
-
+    alert("Fel lösenord");                                           // Alert, fel lösenord.
   }
 
 }
@@ -72,11 +70,11 @@ function deleteCart (event){
 // För deleteknapparna på produkter i varukorgen
 
 function deleteVarukorg(product){
-  CART_LIST = JSON.parse(localStorage.getItem("cartList"));
-  CART_LIST.splice( product.id, 1);
+  CART_LIST = JSON.parse(localStorage.getItem("cartList"));           //Hämtar parsad cartList från localstorage
+  CART_LIST.splice( product.id, 1);                                   // Splicear med hjälp av produkt ID rött produkt ur arrayen.
    
-   localStorage.setItem("cartList" , JSON.stringify (CART_LIST));
-   location.reload();
+   localStorage.setItem("cartList" , JSON.stringify (CART_LIST));       //Sparar listan igen
+   location.reload();                                                   //Location Reload för att visa rätt i varukorgen
 }
 
 // ClearCart funktion för att rensa varukorgen
@@ -109,13 +107,33 @@ function localStorageCart(product){
   const existingData = JSON.parse(localData);
 
   const cleanedData = existingData ? existingData.concat(SHOPPING_CART) : SHOPPING_CART ;
-
-  localStorage.setItem("cartList", JSON.stringify(cleanedData)); 
-
-
+  
+  const cartList = JSON.parse(localStorage.getItem("cartList"))
+  // om localstorage är tom
+  if(cartList == null) {
+    localStorage.setItem("cartList", JSON.stringify(cleanedData)); 
+    location.reload();
+ 
+    // om local storage INTE är tom
+  } else {
+ 
+    let cartItemTitles = Object.values(cartList).map(item => item.title)
+    console.log(cartItemTitles)
+ 
+    // kolla om titeln finns
+    if(cartItemTitles.includes(productTitle.innerText)) {
+      console.log("finns redan")
+      // annars lägg till
+    } else {
+      localStorage.setItem("cartList", JSON.stringify(cleanedData)); 
+      location.reload();
+    }
+ 
+  }
+ 
   // location reload för att uppdatera sidan så att localstorage fungerar
-
-  location.reload();
+ 
+  //location.reload();
   
 }
 
@@ -148,7 +166,9 @@ function myFunction() {
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
+ 
+  var cart = document.querySelector("#myDropdown");
+  /*  if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
@@ -157,7 +177,7 @@ window.onclick = function(event) {
         openDropdown.classList.remove('show');
       }
     }
-  }
+  } */
 }
 
 // Showcart funktion för att visa cartitems i varukorg, körs om if statement längst ner i js stämmer

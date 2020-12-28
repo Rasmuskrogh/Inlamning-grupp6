@@ -99,5 +99,6 @@ function printPDF() {
     pdf.text(10, 230, ` Utgångsdatum: ${form.kkdatum} ` );
     pdf.text(10, 240, ` CCV: ${form.kkcvc} ` );
     pdf.save("Affordable_art_online_kvitto");
+
 }
 

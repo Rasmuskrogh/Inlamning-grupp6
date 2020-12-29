@@ -144,15 +144,23 @@ input[type="number"] {
 
 .product_description {
   align-self: flex-start;
-  margin-top: 10px; }
+  margin-top: 10px;
+  font-style: oblique; }
 
 .product_price {
-  align-self: flex-start;
-  margin-top: 20px; }
+  align-self: center;
+  margin-top: 20px;
+  font-weight: bold; }
 
 .product_title {
   padding-top: 30px;
   align-self: flex-start; }
+
+.product_kr {
+  position: relative;
+  bottom: 1.23rem;
+  left: 1.3rem;
+  font-weight: bold; }
 
 #addCartBtn {
   color: white;
@@ -342,9 +350,10 @@ header {
   margin-left: 2%; }
 
 .headerLogo,
-h1 {
+h1, a {
   font-size: 70px;
-  font-family: "Caveat", cursive; }
+  font-family: "Caveat", cursive;
+  color: black; }
 
 .headerLogoSmall {
   display: flex;

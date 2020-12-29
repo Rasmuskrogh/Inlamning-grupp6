@@ -16,7 +16,7 @@ function renderItems(){
       <img class="cart_product_img" src="${item.img}"><br><br><br>
       <span class="cart_product_title">${item.title}</span>
       <span class="cart_product_price">${item.price}</span>
-      <button id="cart_delete" type="button">Ta bort</button>
+      <i id="cart_delete" class="fas fa-minus-circle"></i>
   </div>`;
  
   })
@@ -47,6 +47,7 @@ function removeProduct(product){
    localStorage.setItem("cartList" , JSON.stringify (CART_LIST));       //Sparar listan igen
    location.reload();                                                   //Location Reload för att visa rätt i varukorgen
 }
+
 
 
 const elements = {
@@ -140,26 +141,26 @@ function printPDF(event) {
 
     parsedData.map((item, index) => {
       const pos = index +10 
-      pdf.text(10, 80, ` ${item.imgUrl} ` );
+      pdf.text(10, 80, ` ${item.img} ` );
       pdf.text(10, 110 + (pos * index) , ` ${item.title} ${item.price}  ` );
    })
  
 
+   pdf.setFontSize(10)
+   pdf.text(10, 160, ` -------------------------------------------------------------------------------------------------------------------------------------------------------------------` );
+
 
     pdf.setFontSize(15)
-    pdf.text(10, 150, ` Dina uppgifter : ` );
-    pdf.text(10, 160, ` Förnamn: ${form.fname} ` );
-    pdf.text(10, 170, ` Efternamn: ${form.enamn} ` );
-    pdf.text(10, 180, ` Gata: ${form.adress} ` );
-    pdf.text(10, 190, ` Stad: ${form.stad} ` );
-    pdf.text(10, 200, ` Län: ${form.lan} ` );
-    pdf.text(10, 210, ` Postkod: ${form.post} ` );
-    pdf.text(10, 220, ` Kreditkortsnummer: ${form.kknr} ` );
-    pdf.text(10, 230, ` Utgångsdatum: ${form.kkdatum} ` );
-    pdf.text(10, 240, ` CCV: ${form.kkcvc} ` );
+    pdf.text(10, 170, ` Dina uppgifter : ` );
+    pdf.text(10, 180, ` Förnamn: ${form.fname} ` );
+    pdf.text(10, 190, ` Efternamn: ${form.enamn} ` );
+    pdf.text(10, 200, ` Gata: ${form.adress} ` );
+    pdf.text(10, 210, ` Stad: ${form.stad} ` );
+    pdf.text(10, 220, ` Län: ${form.lan} ` );
+    pdf.text(10, 230, ` Postkod: ${form.post} ` );
+    pdf.text(10, 240, ` Kreditkortsnummer: ${form.kknr} ` );
+    pdf.text(10, 250, ` Utgångsdatum: ${form.kkdatum} ` );
+    pdf.text(10, 260, ` CCV: ${form.kkcvc} ` );
     pdf.save("Affordable_art_online_kvitto");
 
 }
-
-
-

@@ -165,24 +165,6 @@ function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Gör egentligen ingenting nu?
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
- 
-  var cart = document.querySelector("#myDropdown");
-  /*  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  } */
-}
-
 // Showcart funktion för att visa cartitems i varukorg, körs om if statement längst ner i js stämmer
 function showCart() {
   const data = localStorage.getItem("cartList")

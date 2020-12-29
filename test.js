@@ -1,5 +1,26 @@
 const pdf = new jsPDF();
+const shoppingDiv = document.querySelector("#shoppingItem");
 
+
+function renderItems(){
+  const data = localStorage.getItem("cartList")
+  const parsedData = JSON.parse(data)
+  
+  // mappar igenom parsad data från localstorage och visar i itemContainer, index för att få id på produkten
+  Object.values(parsedData).map((item , index) => {
+    shoppingDiv.innerHTML += `
+      <div id="${index}" class="cart-item>
+      <img class="cart_product_img" src="${item.img}">
+      <span class="cart_product_title">${item.title}</span>
+      <span class="cart_product_price">${item.price}</span>
+      <input class="cart-quantity-input" type="number" value="1">
+      <button id="cart_delete" type="button">REMOVE</button>
+  </div>`;
+ 
+  })
+}
+
+renderItems();
 
 const elements = {
   fnamn: document.getElementsByClassName("fname"),

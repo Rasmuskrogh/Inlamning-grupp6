@@ -1,39 +1,24 @@
+//Fungerar bra till min width 1000 måste ha mediaqueries för det
+
+//För att login funktionen ska fungera
 .hidden {
     display:none !important;
 }
 
-*,*:before,*:after{
-    box-sizing: border-box;
-}
+//Footer
 
-
-.footer {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    flex-flow: row wrap;
-    padding: 200px;
-    color: rgb(0, 0, 0);  
-}
-
-.footer > *{
-    flex: 1 100%;
-}
-
-.footer_left{
-    margin-right: 1.25em;
-    margin-bottom: 2em;
-}
-
-.footer_left img {
-    width:50%;
+footer {
+    border-top:1px solid black;
+    width:100%;
+    height:auto;
+    display:flex;
+    justify-content: space-between;
 }
 
 .footer h2{
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    padding-bottom: 0.5rem;
 }
 
 .footer ul{
@@ -49,28 +34,27 @@
     text-decoration: none;
 }
 
-.footer_right{
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.footer_right > *{
-    flex: 1 50%;
-    margin-right: 1.25em;
-}
 
 .box a{
     color: rgb(0, 0, 0);
+    font-size: 1.3rem;
 }
 
-.footer_bottom {
-    text-align: center;
-    color: rgb(0, 0, 0);
-    padding-top: 50px;
+
+//För footer left
+
+.footer_left {
+    padding: 1rem;
+    width:30%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+.footer_left img {
+    width:30%;
+    align-self: center;
 }
 
 .footer_left p{
@@ -78,8 +62,12 @@
     color:rgb(0, 0, 0);
 }
 
+.socials{
+    align-self: center;
+}
+
 .socials a {
-    background: #364a62;
+    background: #F6F2EC;
     width: 40px;
     height: 40px;
     display: inline-block;
@@ -87,9 +75,125 @@
 }
 
 .socials a i{
-    color: #e7f2f4;
+    color: #000000;
     padding: 10px 12px;
     font-size: 20px;
+}
+
+
+// Footer mid
+
+.footer_mid {
+    width:30%;
+    padding-top:1rem;
+    display:flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+}
+
+.footer_mid i {
+    padding-right: 0.5rem;
+}
+
+// Footer right
+
+.footer_right {
+    width:30%;
+    padding-top:1rem;
+    display:flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;  
+}
+
+@media screen and (max-width:1500px){
+    .footer_left img {
+        width:50%;
+    }
+
+    .socials a {
+        width: 40px;
+        height: 40px;
+        margin-right: 2px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .footer_left img {
+        width:70%;
+    }
+    .footer h2{
+        font-weight: 400;
+        font-size: 2.2vw;
+        padding-bottom: 0.5rem;
+    }
+
+    .socials a {
+        width: 40px;
+        height: 40px;
+        margin-right: 0;
+    }
+    .socials a i{
+        color: #000000;
+        padding: 10px 12px;
+        font-size: 20px;
+    }
+
+  
+}
+
+ @media screen and (max-width:700px){
+
+    footer {
+        height:auto;
+        flex-direction:column-reverse;
+        justify-content: space-between;
+    }
+
+    .footer_left {
+        padding: 1rem;
+        width:100%;
+    }
+    .footer_mid {
+        width:100%;
+        padding-top:2rem;
+        
+    }
+
+    .footer_right {
+        width:100%;
+        padding-top:2rem; 
+    }
+
+    .footer h2{
+        font-weight: 400;
+        font-size: 5vw;
+        padding-bottom: 0.5rem;
+    }
+    
+    .socials a i{
+        color: #000000;
+        
+        font-size: 35px;
+    }
+
+    .box li {
+        font-size: 1.3rem;
+    }
+
+} 
+
+
+
+
+
+
+
+/*
+.footer_right > *{
+    flex: 1 50%;
+    margin-right: 1.25em;
 }
 
 @media screen and (min-width: 600px){
@@ -102,52 +206,4 @@
     .footer_right{
         flex:2 0px;
     }
-}
-
-
-
-
-
-
-/* footer {
-    border:1px solid black;
-    height:15vh;
-    display:flex;
-    justify-content: space-between;
-}
-
-.footer_left {
-    padding:1rem;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-}
-
-.footer_right {
-    padding:1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-}
-
-//.footer_item
-
-
-//hidden class för att dölja adminsida om man inte är inloggad
-.hidden {
-    display:none !important;
-}
-
-a {
-    color: #0060B6;
-    text-decoration: none;
-}
-
-a:hover 
-{
-     color:#00A0C6; 
-     text-decoration:none; 
-     cursor:pointer;  
 } */

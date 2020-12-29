@@ -173,7 +173,7 @@ button:focus {
   max-width: 150px;
   max-height: 150px;
   margin-left: 2.75%;
-  margin-top: 40%;
+  margin-top: 70%;
 }
 
 #cart_delete {
@@ -197,4 +197,21 @@ button:focus {
 position: absolute;
 margin-left: 0.5%;
 font-size: 20px;
+}
+
+#totalSumma {
+  position: absolute;
+  margin-top: 2.5%;
+  margin-left: 1%;
+  font-size: 20px;
+  }
+
+
+
+@media (max-width: 736px) {
+  span {
+    padding-top: 25px;
+    
+  }
+
 }

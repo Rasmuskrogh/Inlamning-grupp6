@@ -2,6 +2,7 @@ const pdf = new jsPDF();
 const shoppingDiv = document.querySelector("#shoppingItem");
 const data = localStorage.getItem("cartList")
 const DELETECART = "cart_delete";
+const totalSpan = document.querySelector("#totalSumma")
 
 
 function renderItems(){
@@ -48,6 +49,23 @@ function removeProduct(product){
    location.reload();                                                   //Location Reload för att visa rätt i varukorgen
 }
 
+
+function countTotal() {
+  const totalproducts = JSON.parse(localStorage.getItem("cartList"));
+  
+  let cartItemPrice = Object.values(totalproducts).map(item => item.price)
+  let total = 0;  
+
+    for (let i=0; i < cartItemPrice.length; i++){
+      let totalPrice = cartItemPrice[i];
+    
+      total = total + totalPrice;
+    }
+    totalSpan.innerHTML = total + "  " + "kr";
+
+} 
+
+countTotal(); 
 
 
 const elements = {
@@ -123,7 +141,6 @@ let information = document.querySelectorAll(".fname, .enamn, .adress, .stad, .la
 
 buttonPDF.addEventListener("click", (event) => printPDF(event) ) 
 
-
 function printPDF(event) {
  
   event.preventDefault()
@@ -141,8 +158,7 @@ function printPDF(event) {
 
     parsedData.map((item, index) => {
       const pos = index +10 
-      pdf.text(10, 80, ` ${item.img} ` );
-      pdf.text(10, 110 + (pos * index) , ` ${item.title} ${item.price}  ` );
+      pdf.text(10, 90 + (pos * index) , ` ${item.title} ${item.price}  ` );
    })
  
 

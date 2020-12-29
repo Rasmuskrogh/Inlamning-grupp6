@@ -7,30 +7,17 @@ header {
 }
 
 .headerLogo {
-<<<<<<< HEAD
-
-    //test
-
-}
-
-.headerLogo, h1{
-font-size: 70px;
-font-family: 'Caveat', cursive;
-color: black;
-text-decoration: underline
-
-=======
   display: flex;
   margin-top: 1%;
   margin-left: 2%;
 }
 
 .headerLogo,
-h1 {
+h1, a {
   font-size: 70px;
   font-family: "Caveat", cursive;
+  color: black;
 }
->>>>>>> e183636bf79ae4d62d8a2c70dd9bfd3e13bac6d3
 
 .headerLogoSmall {
  display:flex;

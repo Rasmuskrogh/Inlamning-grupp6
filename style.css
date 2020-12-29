@@ -35,12 +35,8 @@ main {
 .dropdown {
   position: relative;
   display: inline-block;
-<<<<<<< HEAD
-  margin-right: 5%; }
-=======
   margin-top: 2%;
   margin-right: 10%; }
->>>>>>> e183636bf79ae4d62d8a2c70dd9bfd3e13bac6d3
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -184,10 +180,7 @@ footer {
   border-top: 1px solid black;
   width: 100%;
   height: auto;
-<<<<<<< HEAD
-=======
   position: relative;
->>>>>>> e183636bf79ae4d62d8a2c70dd9bfd3e13bac6d3
   display: flex;
   justify-content: space-between; }
 
@@ -337,23 +330,16 @@ header {
   justify-content: space-between;
   border-bottom: 1px solid black; }
 
-<<<<<<< HEAD
-.headerLogo, h1 {
-  font-size: 70px;
-  font-family: 'Caveat', cursive;
-  color: black;
-  text-decoration: underline; }
-=======
 .headerLogo {
   display: flex;
   margin-top: 1%;
   margin-left: 2%; }
 
 .headerLogo,
-h1 {
+h1, a {
   font-size: 70px;
-  font-family: "Caveat", cursive; }
->>>>>>> e183636bf79ae4d62d8a2c70dd9bfd3e13bac6d3
+  font-family: "Caveat", cursive;
+  color: black; }
 
 .headerLogoSmall {
   display: flex;

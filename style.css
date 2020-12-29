@@ -18,7 +18,7 @@ main {
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: #F6F2EC;
+  background-color: #f6f2ec;
   color: black;
   padding: 16px;
   font-size: 1.4rem;
@@ -26,7 +26,8 @@ main {
   cursor: pointer; }
 
 /* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:hover,
+.dropbtn:focus {
   border: 2px solid black;
   padding: 14px; }
 
@@ -60,6 +61,21 @@ main {
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
   display: block; }
+
+@media screen and (max-width: 750px) {
+  .dropdown {
+    margin-top: 8%;
+    margin-right: 15%; } }
+
+@media screen and (max-width: 600px) {
+  .dropdown {
+    margin-top: 12%;
+    margin-right: 15%; } }
+
+@media screen and (max-width: 450px) {
+  .dropdown {
+    margin-top: 15%;
+    margin-right: 15%; } }
 
 /* För att ta bort styling på "add_amount"-fältet */
 /* Chrome, Safari, Edge, Opera */
@@ -283,12 +299,30 @@ footer {
 header {
   display: flex;
   height: 15vh;
+  width: 100%;
   justify-content: space-between; }
+
+.headerLogo {
+  display: flex;
+  margin-top: 1%;
+  margin-left: 2%; }
 
 .headerLogo,
 h1 {
   font-size: 70px;
   font-family: "Caveat", cursive; }
+
+.headerLogoSmall {
+  display: flex;
+  margin-left: 2%; }
+
+@media screen and (max-width: 750px) {
+  .headerLogo {
+    display: none; } }
+
+@media screen and (min-width: 751px) {
+  .headerLogoSmall {
+    display: none; } }
 
 .productlist {
   height: 65vh;

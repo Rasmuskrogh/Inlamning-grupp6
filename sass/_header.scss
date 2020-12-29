@@ -1,16 +1,38 @@
 header {
   display: flex;
   height: 15vh;
+  width: 100%;
   justify-content: space-between;
 }
 
 .headerLogo {
+  display: flex;
+  margin-top: 1%;
+  margin-left: 2%;
 }
 
 .headerLogo,
 h1 {
   font-size: 70px;
   font-family: "Caveat", cursive;
+}
+
+.headerLogoSmall {
+ display:flex;
+ margin-left: 2%;
+}
+
+@media screen and (max-width:750px){
+  .headerLogo {
+    display:none;
+  }
+
+}
+
+@media screen and (min-width:751px){
+  .headerLogoSmall {
+    display:none;
+  }
 }
 
 

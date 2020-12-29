@@ -10,9 +10,9 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="test.css">
+        <link rel="stylesheet" href="checkout.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous"/>
-    <script src="test.js" defer> </script>
+    <script src="checkout.js" defer> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.debug.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -22,9 +22,12 @@
     <body>
        
         <div style="visibility:hidden"> <asp:TextBox ID="lblFname" runat="server" Text="0"></asp:TextBox> </div>
-
+        
 
         <div id="wrapper">
+            <div class="varorBestallning">
+                <h1>Dina varor :</h1>
+              </div>
             <div id="shoppingItem"></div>
             <div class="container">
                 <form action="">

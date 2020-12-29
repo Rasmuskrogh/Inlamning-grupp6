@@ -1,26 +1,29 @@
 const pdf = new jsPDF();
 const shoppingDiv = document.querySelector("#shoppingItem");
+const data = localStorage.getItem("cartList")
+
 
 
 function renderItems(){
-  const data = localStorage.getItem("cartList")
   const parsedData = JSON.parse(data)
   
   // mappar igenom parsad data från localstorage och visar i itemContainer, index för att få id på produkten
-  Object.values(parsedData).map((item , index) => {
+  parsedData.map((item , index) => {
+
     shoppingDiv.innerHTML += `
       <div id="${index}" class="cart-item>
-      <img class="cart_product_img" src="${item.img}">
+      <h1 class="dinaVaror" hej hej hej </h1>
+      <img class="cart_product_img" src="${item.img}"><br><br><br>
       <span class="cart_product_title">${item.title}</span>
       <span class="cart_product_price">${item.price}</span>
-      <input class="cart-quantity-input" type="number" value="1">
-      <button id="cart_delete" type="button">REMOVE</button>
+      <button id="cart_delete" type="button">Ta bort</button>
   </div>`;
  
   })
 }
 
 renderItems();
+
 
 const elements = {
   fnamn: document.getElementsByClassName("fname"),
@@ -73,6 +76,8 @@ if(formIsValid) {
 
 }
 
+
+
 document.querySelectorAll(".fname, .enamn, .adress, .stad, .lan, .post, .kknr, .kkdatum, .kkcvc, #slutforPDF").forEach(item => {
   console.log(item)
   item.addEventListener('change', event => {
@@ -91,14 +96,15 @@ let inputPDF = document.querySelector("input");
 let info = document.querySelector("#wrapper");
 let information = document.querySelectorAll(".fname, .enamn, .adress, .stad, .lan, .post, .kknr, .kkdatum, .kkcvc ")
 
-buttonPDF.addEventListener("click", printPDF) 
+buttonPDF.addEventListener("click", (event) => printPDF(event) ) 
 
-function printPDF() {
-  console.log("test")
-}
 
-function printPDF() {
+function printPDF(event) {
  
+  event.preventDefault()
+
+  const parsedData = JSON.parse(data)
+
 
     pdf.setFontSize(40)
     pdf.text(50, 25, ` Tack för ditt köp!` );
@@ -106,6 +112,14 @@ function printPDF() {
 
     pdf.setFontSize(20)
     pdf.text(10, 50, ` Detta är vad din beställning består utav :` );
+
+
+    parsedData.map((item, index) => {
+      const pos = index +10 
+      pdf.text(10, 80, ` ${item.imgUrl} ` );
+      pdf.text(10, 110 + (pos * index) , ` ${item.title} ${item.price}  ` );
+   })
+ 
 
 
     pdf.setFontSize(15)
@@ -122,4 +136,6 @@ function printPDF() {
     pdf.save("Affordable_art_online_kvitto");
 
 }
+
+
 

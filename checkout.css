@@ -7,7 +7,7 @@ body {
 
 #wrapper {
   margin-top: 5%;
-  width: 60%;
+  width: 65%;
   display: flex;
   justify-content: center;
   font-family: "Arimo";
@@ -166,4 +166,35 @@ button:focus {
     margin: 5px 0;
     min-height: 30px;
   }
+}
+
+.cart_product_img {
+  width: 100%;
+  max-width: 150px;
+  max-height: 150px;
+  margin-left: 2.75%;
+  margin-top: 40%;
+}
+
+#cart_delete {
+  width: 45%;
+  margin-top: 5px;
+  margin-left: 5.5%;
+  
+}
+.cart_product_title {
+  color: #000000;
+  padding-left: 5.5%;
+  
+}
+.cart_product_price {
+  color: #000000; 
+  padding-right: 100%;
+  padding-left: 5.5%;
+} 
+
+.varorBestallning h1 {
+position: absolute;
+margin-left: 0.5%;
+font-size: 20px;
 }

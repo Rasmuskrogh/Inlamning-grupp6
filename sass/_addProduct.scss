@@ -19,7 +19,6 @@ input[type="number"] {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   flex-wrap: wrap;
-  
 }
 
 .adminProductlist {
@@ -29,13 +28,6 @@ input[type="number"] {
   overflow-x: hidden;
   display: flex;
   flex-wrap: wrap;
-}
-
-@media screen and (max-width:464px){
-  .adminProductlist {
-    flex-direction: column;
-    
-}
 }
 
 // flex parent för product cards

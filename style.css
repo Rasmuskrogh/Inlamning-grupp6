@@ -138,10 +138,6 @@ input[type="number"] {
   display: flex;
   flex-wrap: wrap; }
 
-@media screen and (max-width: 464px) {
-  .adminProductlist {
-    flex-direction: column; } }
-
 .product-card {
   padding: 1rem;
   box-sizing: content-box;

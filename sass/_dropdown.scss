@@ -1,4 +1,4 @@
-/* Dropdown Button */
+//Dropdown knappen
 .dropbtn {
   background-color: #f6f2ec;
   color: black;
@@ -8,14 +8,14 @@
   cursor: pointer;
 }
 
-/* Dropdown button on hover & focus */
+// Dropdown knappen hover & focus
 .dropbtn:hover,
 .dropbtn:focus {
   border: 2px solid black;
   padding: 14px;
 }
 
-/* The container <div> - needed to position the dropdown content */
+// Dropdown container
 .dropdown {
   position: relative;
   display: inline-block;
@@ -23,7 +23,7 @@
   margin-right: 10%;
 }
 
-/* Dropdown Content (Hidden by Default) */
+//Dropdown Content, display none så man måste klicka på knappen för att visa 
 .dropdown-content {
   display: none;
   position: absolute;
@@ -34,20 +34,7 @@
   border:1px solid black;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+//För att visa varukorgen, lägger till klass i js
 .show {
   display: block;
 }
@@ -68,6 +55,7 @@
   font-size: 1rem;
   line-height: 2em;
 }
+
 .cart_product_price{
   position: relative;
   left:1rem;
@@ -113,7 +101,6 @@
   border-radius: 1px 2px 3px;
 }
   
-
 
 //media querie för att flytta varukorgen i mindre än 750px
 @media screen and (max-width: 750px) {

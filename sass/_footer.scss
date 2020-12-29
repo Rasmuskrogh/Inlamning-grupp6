@@ -1,9 +1,29 @@
-//Fungerar bra till min width 1000 måste ha mediaqueries för det
-
 //För att login funktionen ska fungera
 .hidden {
     display:none !important;
 }
+
+//Login formen
+
+.logIn {
+    
+    position: absolute;
+    right:0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  #username {
+    width: 30%;
+  }
+  
+  #password {
+    width: 30%;
+  }
+  
+  //#loginBtn
 
 //Footer
 
@@ -11,13 +31,18 @@ footer {
     border-top:1px solid black;
     width:100%;
     height:auto;
+<<<<<<< HEAD
+=======
+    position: relative;
+>>>>>>> e183636bf79ae4d62d8a2c70dd9bfd3e13bac6d3
     display:flex;
     justify-content: space-between;
 }
 
 .footer h2{
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 2rem;
+    font-family: "Caveat", cursive;
     padding-bottom: 0.5rem;
 }
 
@@ -28,6 +53,7 @@ footer {
 
 .footer li {
     line-height: 2em;
+    font-family: 'Roboto', sans-serif;
 }
 
 .footer a {
@@ -37,7 +63,9 @@ footer {
 
 .box a{
     color: rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
     font-size: 1.3rem;
+    line-height: 2em;
 }
 
 
@@ -57,10 +85,6 @@ footer {
     align-self: center;
 }
 
-.footer_left p{
-    padding-right: 20%;
-    color:rgb(0, 0, 0);
-}
 
 .socials{
     align-self: center;
@@ -119,7 +143,7 @@ footer {
     }
 }
 
-@media screen and (max-width:1000px){
+@media screen and (max-width:1120px){
     .footer_left img {
         width:70%;
     }
@@ -180,6 +204,15 @@ footer {
 
     .box li {
         font-size: 1.3rem;
+    }
+
+    .logIn {
+    
+        position: absolute;
+        top:0;
+        bottom:auto;
+        right:auto;
+        justify-content: center;
     }
 
 } 

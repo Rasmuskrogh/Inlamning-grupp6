@@ -1,47 +1,121 @@
 /* Dropdown Button */
 .dropbtn {
+  background-color: #f6f2ec;
+  color: black;
+  padding: 16px;
+  font-size: 1.4rem;
+  border: none;
+  cursor: pointer;
+}
 
-  background-color: #F6F2EC;
-    color:black;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+  border: 2px solid black;
+  padding: 14px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 2%;
+  margin-right: 10%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}
+
+
+// För allt som pushas in i varukorgen
+.cart-items-h2{
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+//.cart_product_img
+.cart_product_title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 2em;
+}
+.cart_product_price{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5em;
+}
+
+#cart_delete {
+  position:absolute;
+  right:0.5rem;
+  line-height: 1.5em;
+}
+
+// För till kassan och töm varukorg
+
+.buyDeleteBtns{
+  display:flex;
+}
+
+#deleteCart{
+  width:50%;
+}
+
+#buyBtn{
+  width:50%;
+}
   
-  /* Dropdown button on hover & focus */
-  .dropbtn:hover, .dropbtn:focus {
-    border: 2px solid black ;
-    padding: 14px;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
+
+
+//media querie för att flytta varukorgen i mindre än 750px
+@media screen and (max-width: 750px) {
   .dropdown {
+<<<<<<< HEAD
     position: relative;
     display: inline-block;
     margin-right: 5%;
+=======
+    margin-top: 8%;
+    margin-right: 15%;
+>>>>>>> e183636bf79ae4d62d8a2c70dd9bfd3e13bac6d3
   }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .dropdown {
+    margin-top: 10%;
+    margin-right: 15%;
   }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+}
+
+@media screen and (max-width: 450px) {
+  .dropdown {
+    margin-right: 20%;
   }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd}
-  
-  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-  .show {display:block;}
+}
+

@@ -204,9 +204,8 @@ function showCart() {
       <div id="${index}" class="cart-item>
       <img class="cart_product_img" src="${item.img}">
       <span class="cart_product_title">${item.title}</span>
-      <span class="cart_product_price">${item.price}</span>
-      <input class="cart-quantity-input" type="number" value="1">
-      <button id="cart_delete" type="button">Ta bort</button>
+      <span class="cart_product_price">${item.price} kr</span>
+      <i id="cart_delete" class="fas fa-minus-circle"></i>
   </div>`;
  
   })

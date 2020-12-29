@@ -51,6 +51,47 @@
   display: block;
 }
 
+
+// För allt som pushas in i varukorgen
+.cart-items-h2{
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+//.cart_product_img
+.cart_product_title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 2em;
+}
+.cart_product_price{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5em;
+}
+
+#cart_delete {
+  position:absolute;
+  right:0.5rem;
+  line-height: 1.5em;
+}
+
+// För till kassan och töm varukorg
+
+.buyDeleteBtns{
+  display:flex;
+}
+
+#deleteCart{
+  width:50%;
+}
+
+#buyBtn{
+  width:50%;
+}
+  
+
+
 //media querie för att flytta varukorgen i mindre än 750px
 @media screen and (max-width: 750px) {
   .dropdown {
@@ -61,14 +102,14 @@
 
 @media screen and (max-width: 600px) {
   .dropdown {
-    margin-top: 12%;
+    margin-top: 10%;
     margin-right: 15%;
   }
 }
 
 @media screen and (max-width: 450px) {
   .dropdown {
-    margin-top: 15%;
-    margin-right: 15%;
+    margin-right: 20%;
   }
 }
+

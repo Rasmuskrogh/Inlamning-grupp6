@@ -62,6 +62,34 @@ main {
 .show {
   display: block; }
 
+.cart-items-h2 {
+  text-align: center;
+  padding-bottom: 0.5rem; }
+
+.cart_product_title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 2em; }
+
+.cart_product_price {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5em; }
+
+#cart_delete {
+  position: absolute;
+  right: 0.5rem;
+  line-height: 1.5em; }
+
+.buyDeleteBtns {
+  display: flex; }
+
+#deleteCart {
+  width: 50%; }
+
+#buyBtn {
+  width: 50%; }
+
 @media screen and (max-width: 750px) {
   .dropdown {
     margin-top: 8%;
@@ -69,13 +97,12 @@ main {
 
 @media screen and (max-width: 600px) {
   .dropdown {
-    margin-top: 12%;
+    margin-top: 10%;
     margin-right: 15%; } }
 
 @media screen and (max-width: 450px) {
   .dropdown {
-    margin-top: 15%;
-    margin-right: 15%; } }
+    margin-right: 20%; } }
 
 /* För att ta bort styling på "add_amount"-fältet */
 /* Chrome, Safari, Edge, Opera */
@@ -300,7 +327,8 @@ header {
   display: flex;
   height: 15vh;
   width: 100%;
-  justify-content: space-between; }
+  justify-content: space-between;
+  border-bottom: 1px solid black; }
 
 .headerLogo {
   display: flex;
@@ -323,6 +351,17 @@ h1 {
 @media screen and (min-width: 751px) {
   .headerLogoSmall {
     display: none; } }
+
+@media screen and (max-width: 400px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-items: center;
+    align-items: center; }
+  .dropdown {
+    margin-right: 0;
+    margin-bottom: 5rem; } }
 
 .productlist {
   height: 65vh;

@@ -1,26 +1,16 @@
 header {
-    display:flex; 
-    height:15vh;
-    justify-content: space-between
+  display: flex;
+  height: 15vh;
+  justify-content: space-between;
 }
 
 .headerLogo {
-
-
 }
 
-.headerLogo, h1{
-font-size: 70px;
-font-family: 'Caveat', cursive;
-
-
+.headerLogo,
+h1 {
+  font-size: 70px;
+  font-family: "Caveat", cursive;
 }
 
 
-
-//Login formen
-
-.logIn{
-    display:flex;
-    flex-direction: column;
-} 

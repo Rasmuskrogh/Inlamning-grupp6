@@ -7,7 +7,7 @@
   box-sizing: border-box; }
 
 .wrapper {
-  width: 85%;
+  width: 100%;
   margin: auto;
   background-color: #F6F2EC; }
 
@@ -21,7 +21,7 @@ main {
   background-color: #F6F2EC;
   color: black;
   padding: 16px;
-  font-size: 16px;
+  font-size: 1.4rem;
   border: none;
   cursor: pointer; }
 
@@ -33,7 +33,9 @@ main {
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  margin-top: 2%;
+  margin-right: 10%; }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -113,10 +115,25 @@ input[type="number"] {
 .hidden {
   display: none !important; }
 
+.logIn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; }
+
+#username {
+  width: 30%; }
+
+#password {
+  width: 30%; }
+
 footer {
   border-top: 1px solid black;
   width: 100%;
   height: auto;
+  position: relative;
   display: flex;
   justify-content: space-between; }
 
@@ -234,7 +251,13 @@ footer {
     color: #000000;
     font-size: 35px; }
   .box li {
-    font-size: 1.3rem; } }
+    font-size: 1.3rem; }
+  .logIn {
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    right: auto;
+    justify-content: center; } }
 
 /*
 .footer_right > *{
@@ -258,13 +281,10 @@ header {
   height: 15vh;
   justify-content: space-between; }
 
-.headerLogo, h1 {
+.headerLogo,
+h1 {
   font-size: 70px;
-  font-family: 'Caveat', cursive; }
-
-.logIn {
-  display: flex;
-  flex-direction: column; }
+  font-family: "Caveat", cursive; }
 
 .productlist {
   height: 65vh;

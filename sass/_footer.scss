@@ -5,12 +5,37 @@
     display:none !important;
 }
 
+//Login formen
+
+//Login formen
+
+.logIn {
+    
+    position: absolute;
+    right:0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  #username {
+    width: 30%;
+  }
+  
+  #password {
+    width: 30%;
+  }
+  
+  //#loginBtn
+
 //Footer
 
 footer {
     border-top:1px solid black;
     width:100%;
     height:auto;
+    position: relative;
     display:flex;
     justify-content: space-between;
 }
@@ -180,6 +205,15 @@ footer {
 
     .box li {
         font-size: 1.3rem;
+    }
+
+    .logIn {
+    
+        position: absolute;
+        top:0;
+        bottom:auto;
+        right:auto;
+        justify-content: center;
     }
 
 } 

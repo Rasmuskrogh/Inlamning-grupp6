@@ -152,7 +152,7 @@ function showProduct(){
                         <p class="product_description">${item.description}</p>
                         <p class="product_price">${item.price}</p>
                         <span class="product_kr">kr</span>
-                        <button id="addCartBtn">Lägg till i varukorg</button>
+                        <button id="addCartBtn">Lägg till</button>
                         </div>`;
   })
 } 
@@ -192,7 +192,7 @@ function showCart() {
       <span class="cart_product_title">${item.title}</span>
       <span class="cart_product_price">${item.price}</span>
       <input class="cart-quantity-input" type="number" value="1">
-      <button id="cart_delete" type="button">REMOVE</button>
+      <button id="cart_delete" type="button">Ta bort</button>
   </div>`;
  
   })

@@ -57,7 +57,6 @@ footer {
     text-decoration: none;
 }
 
-
 .box a{
     color: rgb(0, 0, 0);
     font-family: 'Roboto', sans-serif;
@@ -65,23 +64,18 @@ footer {
     line-height: 2em;
 }
 
-
 //För footer left
-
 .footer_left {
     padding: 1rem;
     width:30%;
     display:flex;
     flex-direction: column;
     justify-content: center;
-
-
 }
 .footer_left img {
     width:30%;
     align-self: center;
 }
-
 
 .socials{
     align-self: center;
@@ -101,9 +95,7 @@ footer {
     font-size: 20px;
 }
 
-
 // Footer mid
-
 .footer_mid {
     width:30%;
     padding-top:1rem;
@@ -118,7 +110,6 @@ footer {
 }
 
 // Footer right
-
 .footer_right {
     width:30%;
     padding-top:1rem;
@@ -163,8 +154,8 @@ footer {
 
   
 }
-
- @media screen and (max-width:700px){
+// Under 700px blir footern column reverse
+@media screen and (max-width:700px){
 
     footer {
         height:auto;
@@ -179,7 +170,6 @@ footer {
     .footer_mid {
         width:100%;
         padding-top:2rem;
-        
     }
 
     .footer_right {
@@ -195,7 +185,6 @@ footer {
     
     .socials a i{
         color: #000000;
-        
         font-size: 35px;
     }
 
@@ -204,7 +193,6 @@ footer {
     }
 
     .logIn {
-    
         position: absolute;
         top:0;
         bottom:auto;
@@ -217,23 +205,3 @@ footer {
 
 
 
-
-
-
-/*
-.footer_right > *{
-    flex: 1 50%;
-    margin-right: 1.25em;
-}
-
-@media screen and (min-width: 600px){
-    .footer_right > *{
-        flex:1;
-    }
-    .footer_left{
-        flex:1 0px;
-    }
-    .footer_right{
-        flex:2 0px;
-    }
-} */

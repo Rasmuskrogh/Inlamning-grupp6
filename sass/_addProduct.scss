@@ -31,6 +31,13 @@ input[type="number"] {
   flex-wrap: wrap;
 }
 
+@media screen and (max-width:464px){
+  .adminProductlist {
+    flex-direction: column;
+    
+}
+}
+
 // flex parent för product cards
 
 .product-card {
@@ -90,6 +97,7 @@ input[type="number"] {
 }
 
 // Styling av bild, text och knapp inuti product cards, för startsida och addproduct
+
 
 .product_img {
   width: 100%;   

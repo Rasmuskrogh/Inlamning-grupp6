@@ -160,7 +160,8 @@ input[type="number"] {
   position: relative;
   bottom: 1.23rem;
   left: 1.3rem;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-left: 10px; }
 
 #addCartBtn {
   color: white;

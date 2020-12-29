@@ -14,7 +14,7 @@ input[type="number"] {
 #add_form {
   display: flex;
   flex-direction: row;
-  align-content: center;
+  align-content: flex-start;
   width: 100%;
   height: 5vh;
   border-top: 1px solid black;
@@ -32,51 +32,48 @@ input[type="number"] {
   overflow-x: hidden;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 // flex items
 
 .product-card {
+  padding: 1rem;
+  box-sizing: content-box;
+  max-width: 200px;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  padding: 2%;
-  flex-grow: 1;
-  flex-basis: 16%; // Så det blir 5 st på varje rad
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  
+
 }
 
-//För att det ska bli 4 produkter på samma rad
-@media (max-width: 920px) {
-  .product-card {
-    flex: 1 21%;
-  }
-}
 
-// Två produkter brevid varann i mobilversion
-@media (max-width: 600px) {
-  .product-card {
-    flex: 1 46%;
-  }
-}
 
 // alla produkt element
 
 //Lägg till en min height på bilder
 .product_img {
-  max-width: 100%;
-  border: 1px solid black;
+  width: 100%;
+    
 }
 
-// .product_title
+.product_title, .product_description, .product_price {
+  align-self: flex-start;
+}
 
-// .product_description
-
-// .product_price
+.product_title {
+  padding-top: 30px;
+}
 
 // .product_kr
 
-// #addCartBtn
+#addCartBtn {
+  color: white;
+  background-color: black;
+  display: inline-block;
+  height: 35px;  
+}
+
 
 // #edit
 

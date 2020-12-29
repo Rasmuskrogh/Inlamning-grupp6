@@ -4,7 +4,7 @@
   background-color: #F6F2EC;
     color:black;
     padding: 16px;
-    font-size: 16px;
+    font-size: 1.4rem;
     border: none;
     cursor: pointer;
   }
@@ -19,6 +19,8 @@
   .dropdown {
     position: relative;
     display: inline-block;
+    margin-top: 2%;
+    margin-right: 10%;
   }
   
   /* Dropdown Content (Hidden by Default) */

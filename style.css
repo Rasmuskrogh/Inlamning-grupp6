@@ -139,7 +139,8 @@ footer {
 
 .footer h2 {
   font-weight: 400;
-  font-size: 1.3rem;
+  font-size: 2rem;
+  font-family: "Caveat", cursive;
   padding-bottom: 0.5rem; }
 
 .footer ul {
@@ -147,14 +148,17 @@ footer {
   padding-left: 0; }
 
 .footer li {
-  line-height: 2em; }
+  line-height: 2em;
+  font-family: 'Roboto', sans-serif; }
 
 .footer a {
   text-decoration: none; }
 
 .box a {
   color: black;
-  font-size: 1.3rem; }
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  line-height: 2em; }
 
 .footer_left {
   padding: 1rem;
@@ -166,10 +170,6 @@ footer {
 .footer_left img {
   width: 30%;
   align-self: center; }
-
-.footer_left p {
-  padding-right: 20%;
-  color: black; }
 
 .socials {
   align-self: center; }
@@ -213,7 +213,7 @@ footer {
     height: 40px;
     margin-right: 2px; } }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1120px) {
   .footer_left img {
     width: 70%; }
   .footer h2 {

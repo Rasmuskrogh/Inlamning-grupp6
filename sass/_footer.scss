@@ -42,7 +42,8 @@ footer {
 
 .footer h2{
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 2rem;
+    font-family: "Caveat", cursive;
     padding-bottom: 0.5rem;
 }
 
@@ -53,6 +54,7 @@ footer {
 
 .footer li {
     line-height: 2em;
+    font-family: 'Roboto', sans-serif;
 }
 
 .footer a {
@@ -62,7 +64,9 @@ footer {
 
 .box a{
     color: rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
     font-size: 1.3rem;
+    line-height: 2em;
 }
 
 
@@ -82,10 +86,6 @@ footer {
     align-self: center;
 }
 
-.footer_left p{
-    padding-right: 20%;
-    color:rgb(0, 0, 0);
-}
 
 .socials{
     align-self: center;
@@ -144,7 +144,7 @@ footer {
     }
 }
 
-@media screen and (max-width:1000px){
+@media screen and (max-width:1120px){
     .footer_left img {
         width:70%;
     }

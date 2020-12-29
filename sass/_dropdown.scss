@@ -31,6 +31,7 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  border:1px solid black;
 }
 
 /* Links inside the dropdown */
@@ -51,6 +52,9 @@
   display: block;
 }
 
+#cartitems {
+  font-family: 'Roboto', sans-serif;
+}
 
 // För allt som pushas in i varukorgen
 .cart-items-h2{
@@ -65,6 +69,8 @@
   line-height: 2em;
 }
 .cart_product_price{
+  position: relative;
+  left:1rem;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   line-height: 1.5em;
@@ -76,6 +82,13 @@
   line-height: 1.5em;
 }
 
+.sum-total {
+  border-top: 1px solid black;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 // För till kassan och töm varukorg
 
 .buyDeleteBtns{
@@ -84,10 +97,20 @@
 
 #deleteCart{
   width:50%;
+  font-size:14px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  border-radius: 1px 2px 3px;
 }
 
 #buyBtn{
   width:50%;
+  font-size:14px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  border-radius: 1px 2px 3px;
 }
   
 

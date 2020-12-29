@@ -101,17 +101,16 @@ input[type="number"] {
   height: 65vh;
   overflow: scroll;
   overflow-y: auto;
-  overflow-x: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; }
+  overflow-x: hidden; }
 
 .product-card {
   padding: 1rem;
   box-sizing: content-box;
   max-width: 200px;
+  min-width: 200px;
   position: relative;
-  display: flex; }
+  display: flex;
+  flex-direction: column; }
 
 .product_img {
   width: 100%; }
@@ -130,7 +129,8 @@ input[type="number"] {
   padding: 8px;
   width: 100%;
   cursor: pointer;
-  font-size: 14px; }
+  font-size: 14px;
+  margin-top: auto; }
 
 .hidden {
   display: none !important; }

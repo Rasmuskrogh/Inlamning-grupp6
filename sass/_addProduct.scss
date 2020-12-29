@@ -30,9 +30,6 @@ input[type="number"] {
   overflow: scroll;
   overflow-y: auto;
   overflow-x: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 // flex items
@@ -41,9 +38,11 @@ input[type="number"] {
   padding: 1rem;
   box-sizing: content-box;
   max-width: 200px;
+  min-width: 200px;
   position: relative;
   display: flex;
-  
+  flex-direction: column;
+
 
 }
 
@@ -63,9 +62,10 @@ input[type="number"] {
 
 .product_title {
   padding-top: 30px;
+  
 }
 
-// .product_kr
+
 
 #addCartBtn {
   color: white;
@@ -76,6 +76,7 @@ input[type="number"] {
   width: 100%;
   cursor: pointer;
   font-size: 14px;
+  margin-top: auto;
   
 }
 

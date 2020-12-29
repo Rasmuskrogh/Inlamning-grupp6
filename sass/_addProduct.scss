@@ -71,7 +71,12 @@ input[type="number"] {
   color: white;
   background-color: black;
   display: inline-block;
-  height: 35px;  
+  border: none;
+  padding: 8px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 14px;
+  
 }
 
 

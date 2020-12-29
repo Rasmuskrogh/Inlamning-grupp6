@@ -156,6 +156,12 @@ input[type="number"] {
   padding-top: 30px;
   align-self: flex-start; }
 
+.product_kr {
+  position: relative;
+  bottom: 1.23rem;
+  left: 1.3rem;
+  font-weight: bold; }
+
 #addCartBtn {
   color: white;
   background-color: black;

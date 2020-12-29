@@ -59,12 +59,13 @@ input[type="number"] {
 .product_description {
   align-self: flex-start;
   margin-top: 10px;
+  font-style: oblique; 
 }
 
 .product_price {
-  align-self: flex-start;
+  align-self: center;
   margin-top: 20px;
-
+  font-weight: bold;
 }
 
 .product_title {

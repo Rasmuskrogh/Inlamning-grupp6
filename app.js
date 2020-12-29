@@ -1,5 +1,4 @@
 // Globala queryselectors
-
 const uploadBtn = document.querySelector("#uploadBtn");
 const addTitle = document.querySelector("#add_title");
 const addInfo = document.querySelector("#add_info");
@@ -9,13 +8,10 @@ const cartItems = document.querySelector("#cart-items");
 const clearCartBtn = document.querySelector("#deleteCart");
 const loginBtn = document.querySelector("#loginBtn");
 const cartTotal = document.querySelector(".total-price");
-
-// Array som prudukter i shoppingcart sparas i
+// Array som produkter i shoppingcart sparas i
 let SHOPPING_CART = [];
-
 //För add to cart och delete cart knapparna 
 const ADDTOCART = "addCartBtn", DELETECART = "cart_delete";
-
 //eventlistener för knappar
 productDiv.addEventListener("click", addDeleteCart);
 cartItems.addEventListener("click", deleteCart); 

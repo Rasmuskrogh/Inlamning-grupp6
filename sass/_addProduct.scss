@@ -56,14 +56,24 @@ input[type="number"] {
     
 }
 
-.product_title, .product_description, .product_price {
+.product_description {
   align-self: flex-start;
+  margin-top: 10px;
+}
+
+.product_price {
+  align-self: flex-start;
+  margin-top: 20px;
+
 }
 
 .product_title {
   padding-top: 30px;
-  
+  align-self: flex-start;
 }
+
+
+
 
 
 

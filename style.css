@@ -142,11 +142,17 @@ input[type="number"] {
 .product_img {
   width: 100%; }
 
-.product_title, .product_description, .product_price {
-  align-self: flex-start; }
+.product_description {
+  align-self: flex-start;
+  margin-top: 10px; }
+
+.product_price {
+  align-self: flex-start;
+  margin-top: 20px; }
 
 .product_title {
-  padding-top: 30px; }
+  padding-top: 30px;
+  align-self: flex-start; }
 
 #addCartBtn {
   color: white;

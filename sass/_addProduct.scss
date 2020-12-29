@@ -22,16 +22,13 @@ input[type="number"] {
   
 }
 
-
-
-
-
 .adminProductlist {
   height: 65vh;
   overflow: scroll;
   overflow-y: auto;
   overflow-x: hidden;
-  
+  display: flex;
+  flex-wrap: wrap;
 }
 
 // flex parent för product cards
@@ -44,15 +41,58 @@ input[type="number"] {
   position: relative;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  
+}
+@media (max-width: 1100px) {
+  .product-card {
+    padding: 1rem;
+    box-sizing: content-box;
+    max-width: 305px;
+    min-width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
+  }
+}
+@media (max-width: 770px) {
+  .product-card {
+    padding: 1rem;
+    box-sizing: content-box;
+    max-width: 350px;
+    min-width: 170px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
+  }
 }
 
+@media (max-width: 765px) {
+  .product-card {
+    padding: 1rem;
+    box-sizing: content-box;
+    max-width: 400px;
+    min-width: 200px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
+  }
+}
 
-
-// Styling av bild, text och knapp inuti product cards
+// Styling av bild, text och knapp inuti product cards, för startsida och addproduct
 
 .product_img {
-  width: 100%;
-    
+  width: 100%;   
 }
 
 .product_description {
@@ -78,21 +118,6 @@ input[type="number"] {
   left: 1.3rem;
   font-weight: bold;
   margin-left: 10px;
-}
-
-
-
-#addCartBtn {
-  color: white;
-  background-color: black;
-  display: inline-block;
-  border: none;
-  padding: 8px;
-  width: 100%;
-  cursor: pointer;
-  font-size: 14px;
-  margin-top: auto;
-  
 }
 
 

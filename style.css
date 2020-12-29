@@ -128,7 +128,9 @@ input[type="number"] {
   height: 65vh;
   overflow: scroll;
   overflow-y: auto;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap; }
 
 .product-card {
   padding: 1rem;
@@ -137,7 +139,45 @@ input[type="number"] {
   min-width: 200px;
   position: relative;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
+
+@media (max-width: 1100px) {
+  .product-card {
+    padding: 1rem;
+    box-sizing: content-box;
+    max-width: 305px;
+    min-width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); } }
+
+@media (max-width: 770px) {
+  .product-card {
+    padding: 1rem;
+    box-sizing: content-box;
+    max-width: 350px;
+    min-width: 170px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); } }
+
+@media (max-width: 765px) {
+  .product-card {
+    padding: 1rem;
+    box-sizing: content-box;
+    max-width: 400px;
+    min-width: 200px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); } }
 
 .product_img {
   width: 100%; }
@@ -162,17 +202,6 @@ input[type="number"] {
   left: 1.3rem;
   font-weight: bold;
   margin-left: 10px; }
-
-#addCartBtn {
-  color: white;
-  background-color: black;
-  display: inline-block;
-  border: none;
-  padding: 8px;
-  width: 100%;
-  cursor: pointer;
-  font-size: 14px;
-  margin-top: auto; }
 
 #edit {
   color: white;
@@ -409,27 +438,13 @@ h1, a {
   display: flex;
   flex-wrap: wrap; }
 
-.product-card {
-  display: flex;
-  flex-direction: column;
-  padding: 2%;
-  flex-grow: 1;
-  flex-basis: 16%;
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
-
-@media (max-width: 920px) {
-  .product-card {
-    flex: 1 21%; } }
-
-.productlist .product-card:first-child,
-.productlist .product-card:nth-child(2) {
-  flex: 2 46%; }
-
-@media (max-width: 600px) {
-  .product-card {
-    flex: 1 46%; } }
-
-.product_img {
-  max-width: 100%;
-  border: 1px solid black; }
+#addCartBtn {
+  color: white;
+  background-color: black;
+  display: inline-block;
+  border: none;
+  padding: 8px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: auto; }

@@ -69,3 +69,28 @@ input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+@media (max-width: 736px) {
+
+
+  body {
+    width: 100%;
+    background: url("https://papers.co/wallpaper/papers.co-vz23-minimal-blue-dark-line-abstract-digital-pattern-background-30-wallpaper.jpg") center center no-repeat;
+    
+  }
+
+input {
+  line-height: 18pt;
+  margin-bottom: 18pt;
+}
+
+}
+
+@media (max-width: 436px) {
+
+  body {
+    background: url("https://papers.co/wallpaper/papers.co-vz23-minimal-blue-dark-line-abstract-digital-pattern-background-30-wallpaper.jpg") center center no-repeat;
+  }
+
+
+}

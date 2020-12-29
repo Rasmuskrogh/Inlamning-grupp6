@@ -8,51 +8,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
     <script src="app.js" defer> </script>
-
 </head>
 <body>
 <div class="wrapper">
-
     <header>
-        
+        <!-- för mobilversionen -->
         <div class="headerLogoSmall">
             <img id="x" src="/images/logo.png" alt="Small company logo">
         </div>
-
+        <!-- för större skärmar -->
         <div class="headerLogo">
-
            <a href="index.html"><h1>Affordable Art Online</h1></a>
-
         </div>
 
-        
         <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">Kassa</button>
             <div id="myDropdown" class="dropdown-content">
                 <div id="cart-items">
                     <h2 class="cart-items-h2">Dina varor</h2>
-                
+                </div>
+                <div class="sum-total">
+                    <strong>Totalt</strong>
+                    <span class="total-price"></span>
+                </div>
+                <div class="buyDeleteBtns">
+                    <button id="deleteCart">Töm varukorg</button>
+                    <button onclick="window.location.href='checkout.html';" id="buyBtn">Till kassan</button>
+                </div>
             </div>
-            <div class="sum-total">
-                <strong>Totalt</strong>
-                <span class="total-price"></span>
-            </div>
-            <div class="buyDeleteBtns">
-                <button id="deleteCart">Töm varukorg</button>
-                <button onclick="window.location.href='checkout.html';" id="buyBtn">Till kassan</button>
-            </div>
-            </div>
-          </div>
-        </header>
+        </div>
+    </header>
 
     <main>
-
         <section id="products">
             <div class="productlist">
             <!-- här pushas produkterna in -->
             </div>
         </section>
-
     </main>
     
     <footer class="footer">
@@ -94,12 +86,6 @@
                 <button id="loginBtn">Logga in</button>
             </form>
         </div>
-    <!-- 
-             <div class="footer_bottom">
-              <p>&copy;Affordable Art 2020</p>   
-             </div> -->
-
-
     </footer>
     </div>
 </div>

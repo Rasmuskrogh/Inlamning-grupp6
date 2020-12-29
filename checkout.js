@@ -27,7 +27,7 @@ renderItems();
 
 // För deleteknapparna på produkter i varukorgen
 
-shoppingDiv.addEventListener("click", removeProduct);
+shoppingDiv.addEventListener("click", deleteCart);
 
 // Väljer rätt produkt som körs i removeProduct
 function deleteCart (event){

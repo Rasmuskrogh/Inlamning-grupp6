@@ -1,7 +1,7 @@
 const pdf = new jsPDF();
 const shoppingDiv = document.querySelector("#shoppingItem");
 const data = localStorage.getItem("cartList")
-
+const DELETECART = "cart_delete";
 
 
 function renderItems(){
@@ -23,6 +23,30 @@ function renderItems(){
 }
 
 renderItems();
+
+// För deleteknapparna på produkter i varukorgen
+
+shoppingDiv.addEventListener("click", removeProduct);
+
+// Väljer rätt produkt som körs i removeProduct
+function deleteCart (event){
+  const targetbtnCart = event.target;
+  
+  const product = targetbtnCart.parentNode;
+  
+  if(targetbtnCart.id == DELETECART ){
+    removeProduct(product);
+   } 
+
+}
+
+function removeProduct(product){
+  CART_LIST = JSON.parse(localStorage.getItem("cartList"));           //Hämtar parsad cartList från localstorage
+  CART_LIST.splice( product.id, 1);                                   // Splicear med hjälp av produkt ID rött produkt ur arrayen.
+   
+   localStorage.setItem("cartList" , JSON.stringify (CART_LIST));       //Sparar listan igen
+   location.reload();                                                   //Location Reload för att visa rätt i varukorgen
+}
 
 
 const elements = {

@@ -8,6 +8,7 @@ const productDiv = document.querySelector("#products .productlist");
 const cartItems = document.querySelector("#cart-items");
 const clearCartBtn = document.querySelector("#deleteCart");
 const loginBtn = document.querySelector("#loginBtn");
+const cartTotal = document.querySelector(".total-price");
 // Array som prudukter i shoppingcart sparas i
 
 let SHOPPING_CART = [];
@@ -164,6 +165,8 @@ function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
+// Gör egentligen ingenting nu?
+
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
  
@@ -184,20 +187,7 @@ window.onclick = function(event) {
 function showCart() {
   const data = localStorage.getItem("cartList")
   const parsedData = JSON.parse(data)
-  //allt nytt
-  // let itemNames = cartItems.querySelectorAll(".cart_product_title")
-  // let localStorageItems = JSON.parse(localStorage.getItem("cartList"))
-  // let cartProductTitle = document.getElementsByClassName("product_title")
-  // console.log(localStorageItems)
  
-    // let cartItemTitles = Object.values(parsedData).map(item => 
-  //   item.title
-  // )
- 
-  // if(!cartItemTitles.includes("dd")) {
-  //   console.log("finns redan")
-  // } else {}
-  
   // mappar igenom parsad data från localstorage och visar i itemContainer, index för att få id på produkten
   Object.values(parsedData).map((item , index) => {
     cartItems.innerHTML += `
@@ -209,14 +199,26 @@ function showCart() {
   </div>`;
  
   })
-
-  // for (var i = 0; i < itemNames.length; i++) {
-  //   if (itemNames[i].innerText == item.title) {
-  //     alert("Denna vara finns redan i varukorgen")
-  //     return
-  //   }
-  // }
 }
+
+// Räknar totalen från localstorage
+
+ function countTotal() {
+  const totalproducts = JSON.parse(localStorage.getItem("cartList"));
+  
+  let cartItemPrice = Object.values(totalproducts).map(item => item.price)
+  let total = 0;  
+
+    for (let i=0; i < cartItemPrice.length; i++){
+      let totalPrice = cartItemPrice[i];
+    
+      total = total + totalPrice;
+    }
+    cartTotal.innerHTML = total + "  " + "kr";
+
+} 
+
+
 
 //If statement som bara kör showProduct om det finns en produkt sparad i localstorage.
 
@@ -225,9 +227,10 @@ if(products.length>0){
 showProduct();
 }
 
-//If statement som bara kör addToCart om det finns en produkt sparad i localstorage.
+//If statement som bara kör addToCart och countTotal om det finns en produkt sparad i localstorage.
 
 let productsInCart = JSON.parse(localStorage.getItem("cartList"))
 if(productsInCart.length>0){
   showCart();
+  countTotal();
 }
